@@ -20,9 +20,12 @@ Once running, the script will draw the word "Paused" near the top of the screen.
 
 When you finish the run, press the stop button, and the script will automatically append to a file named frames.json in the same directory as the frames.lua script. Alternatively you can just close snes9x and the file will automatically be written to as well. 
 
-If you would like to overwrite the file instead of append, you can edit 
+If you would like to overwrite the file instead of append, you can edit
+
 file = io.open("frames.json", "a") 
+
 to be
+
 file = io.open("frames.json", "w")
 
 This will cause the file to be overwritten each time, so you don't have to scroll the the end of the file and periodically delete the frames.json file.
