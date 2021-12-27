@@ -66,6 +66,10 @@ for i=-4, 80000 do
 	area_menus[i]=0
 end
 
+function file_exists(name) --https://stackoverflow.com/questions/4990990/check-if-a-file-exists-with-lua
+   local f=io.open(name,"r")
+   if f~=nil then io.close(f) return true else return false end
+end
 
 local function myframe()
 	local menu = memory.readbyte(0x7E0500)
@@ -172,7 +176,12 @@ end
 
 
 local function myexit()
-	file = io.open("frames.json", "a")
+	i=0
+	repeat
+		i=i+1
+		s=string.format("frames%s.json",i)
+	until( not file_exists(s) )
+	file = io.open(s, "a")
 	local timet=0
 	local timeb=0
 	local timem=0
