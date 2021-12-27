@@ -18,18 +18,9 @@ In the new window, click browse, and then select the frames.lua script. The scri
 
 Once running, the script will draw the word "Paused" near the top of the screen. Once you exit the select save file menu, the script will start counting the time you spend in each area. 
 
-When you finish the run, press the stop button, and the script will automatically append to a file named frames.json in the same directory as the frames.lua script. Alternatively you can just close snes9x and the file will automatically be written to as well. 
+When you finish the run, press the stop button, and the script will automatically write to a new file named frames###.json (picks the first number not already used and uses that) in the same directory as the frames.lua script. Alternatively you can just close snes9x and the file will automatically be written to as well. 
 
-If you would like to overwrite the file instead of append, you can edit
-
-file = io.open("frames.json", "a") 
-
-to be
-
-file = io.open("frames.json", "w")
-
-This will cause the file to be overwritten each time, so you don't have to scroll the the end of the file and periodically delete the frames.json file.
 
 # Features Comming Soon
 
-abigtoe is working on a website to take a json file as input, and display everything in a tidy manner, along with other interesting breakdowns. More information coming soon. 
+abigtoe is working on a website to take a json file as input, and display everything in a tidy manner, along with other interesting breakdowns. You can try it at https://chrono.abigtoe.org/
