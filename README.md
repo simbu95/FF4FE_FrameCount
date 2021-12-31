@@ -20,6 +20,9 @@ Once running, the script will draw the word "Paused" near the top of the screen.
 
 When you finish the run, press the stop button, and the script will automatically write to a new file named frames###.json (picks the first number not already used and uses that) in the same directory as the frames.lua script. Alternatively you can just close snes9x and the file will automatically be written to as well. 
 
+# Metadata Extraction
+
+To eventually allow a database of seed info to be used, I have added in a python script for extracting the metadata out of a given rom. You can run the script yourself, drag the rom file onto the provided .bat file (the rom file must be in the same directory as the .py file), or drag and drop the rom file onto the provided metadata.exe file. All of these will create a out.txt file in the same directory as your rom file, with all the metadata from the seed. 
 
 # Features Comming Soon
 
