@@ -143,11 +143,11 @@ local function FormatKI()
 	io.write(string.format("\"KIs\": [\n"))
 	for i=0,58 do
 		io.write(string.format("{\n\"name\": \"%s\",\n",KIsMap[i+1]))
-		io.write(string.format("\"time\": {\n%s},\n}",FormatTime(KIs[i])))
+		io.write(string.format("\"time\": {\n%s}\n},",FormatTime(KIs[i])))
 		
 	end
 	io.write(string.format("{\n\"name\": \"%s\",\n",KIsMap[62]))
-	io.write(string.format("\"time\": {\n%s},\n}\n],",FormatTime(KIs[61])))
+	io.write(string.format("\"time\": {\n%s}\n}\n],",FormatTime(KIs[61])))
 end
 
 local function FormatBottom(mylist)
