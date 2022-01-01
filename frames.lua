@@ -2,8 +2,13 @@
 area_battles = {}
 area_frames = {}
 area_menus = {}
+startTime=0
 lagcount=0
 started=false
+KIs={}
+KIsb={}
+KIsMap={"Start","Antlion","Fabul","Ordeals","BaronInn","BaronCastle","Bedward","Twinharp","Zot","TowerTop","Cannon","Dwarf","Sealed","Feymarch","Rat","Shiela1","Shiela2","Asura","Levia","Odin","Sylphs","Bahamut","PaleDim","Wyvern","Plague","DLunar1","DLunar2","Ogopogo","ZotT1","ECastleT1","ECastleT2","ECastleT3","BabilT1","BabilT2","BabilT3","BabilT4","HookT1","HookT2","FeymarchT1","SylphT1","SylphT2","SylphT3","SylphT4","SylphT5","SylphT6","SylphT7","GiantT1","LunarPathT1","LSTT1","LSTT2","LSTT3","LSTT4","LSTT5","LSTT6","LSTT7","LSTT8","LSTT9","DMist","Golbez","E1","E2","Objectives","E3","E4"}
+
 areas={"Baron Town","Mist","Kaipo","Mysidia","Mythril","Troia Town","Agart","Troia Inn","Troia Weapons","Troia Armor","Troia Items","Baron Inn","Baron Equipment","Cid's house","Rosa's house","Rydia's house","Kaipo Inn","Kaipo Cafe","Kaipo Hospital","Mysidia Cafe","Mysidia Inn","Mount Ordeals Mirror Room","House of Wishes","Room of Wishes","Troia Cafe main floor","Troia Cafe upstairs","Troia Dancers' stage","-Glitch world-","Troia Chocobo stable entrance","Troia Chocobo stable downstairs","Astro Tower main hall","Astro Tower Observatory","Agart Inn","Large chocobo forest near Troia","Town water background","Castle floor background","Baron Castle","Damcyan","Fabul","Troia Castle","Eblan","Desert background","Baron Castle Lobby","Baron Castle Outer court","Baron Castle Throne room","Baron Castle West Hall","Baron Castle East Hall","Baron Castle Prison entrance","Baron Castle Prison","Baron Castle Soldiers' quarters","Baron Castle West tower 1F","Baron Castle West tower 2F","Baron Castle Cecil's room","Baron Castle East tower 1F","Baron Castle East tower 2F","Baron Castle East tower 3F","Baron Castle East tower B1","Baron Castle Odin's room","Sewer entrance","Sewer B3","Sewer B1","Sewer Save point room","Sewer B2","Damcyan 1F","Damcyan 2F","Damcyan 3F","Damcyan Treasury entrance","Damcyan Treasury downstairs","Room leading to sewer","Agart Weapons","Agart Armor","Fabul Lobby","Fabul Second floor","Fabul Throne room","Fabul Crystal room","Fabul Equipment store","Fabul Inn","Fabul East tower 1F","Fabul East tower 2F","Fabul King's room","Fabul West tower 1F","Fabul Hostpital","Fabul Yang's room","Forest where you lose Kain","Watery Pass Save point room","Troia Castle Lobby","Troia Castle Clerics' room","Troia Castle Crystal room","Troia Castle Hospital","Troia Castle Room w/ 3 stairs","Troia Castle Hall to treasury","Troia Castle Room w/ random pots","Troia Castle Room w/ rubyring chests","Troia Castle Main treasury","Eblan 1F","Eblan 2F","Eblan Throne room","Eblan West tower 1F","Eblan West tower 2F","Eblan East tower 1F","Eblan East tower 2F","Eblan Basement","Baron Castle Black magic school","Baron Castle White magic school","Desert background","Training room","Waterfall","Castle water background","Misty cave","Mirror room background","Watery Pass background","Watery Pass 1F","Watery Pass 2F","Watery Pass 3F","Watery Pass 4F","Watery Pass 5F","Waterfall entrance","Waterfall 1F","Waterfall 2F","Antlion Cave 1F","Antlion Cave 2F","Antlion Cave Antlion's nest","Antlion Cave Save point room","Antlion Cave Treasure room w/ harp","Black background","Mist background","Mount Hobs West","Mount Hobs Summit","Mount Hobs East","Mount Hobs Save point floor","Mountain background","Watery Pass Room behind waterfall","Mount Ordeals 1F","Mount Ordeals 2F","Mount Ordeals 3F","Mount Ordeals Summit","Mysidia Crystal room","Mysidia Devil's Road","Baron Castle Collapsing hallway","Agart Well","Cave Magnes 1F","Cave Magnes 2F","Cave Magnes Treasure room w/ pit","Cave Magnes 3F","Cave Magnes Treasure room w/ torch","Cave Magnes 4F","Cave Magnes Save point room","Cave Magnes 5F","Cave Magnes Crystal room","Cave Magnes background","Watery Pass campsite","Baron Devil's Road","Tower of Zot 1F","Tower of Zot 2F","Tower of Zot 3F","Pitch black room","Tower of Zot 4F","Tower of Zot 5F","Tower of Zot 6F","Tower of Zot Command center","Adamant Grotto","Cave Magnes Save point room","Tower of Zot Save point room","Cid's Airship - Giant sequence","Twins' Airship - Giant sequence","Edward's Airship - Giant sequence","Tower of Babil Save point room","Tower of Babil B1","Tower of Babil B2","Tower of Babil B3","Tower of Babil B4","Tower of Babil Crystal room","Tower of Babil B5","Scrolling mountains - Cid falling?","Underground tunnel background","Crystal room background","Ending - Cecil's room","Training room Main floor","Training room Upstairs","-Glitch world-","-Glitch world-","Giant of Babil Mouth","Giant of Babil Neck","Giant of Babil Chest","-Glitch world-","Giant of Babil Stomach","Giant of Babil Passage","-Glitch world-","Giant of Babil Lung","Giant of Babil CPU","Giant of Babil background","-Glitch world-","Moving airship with soldiers","Fabul port","Boat sailing","Airship docked","Joined airships","Empty airship","Airship flying over underworld","Cave Eblan entrance","Cave Eblan Settlement","Cave Eblan pass to Babil","Cave Eblan exit","Cave Eblan Inn","Cave Eblan Equipment store","Cave Eblan Save point room","Cave Eblan Hospital","Fabul Chocobo forest","Empty airship","Mount Ordeals Chocobo forest","Baron Chocobo forest","Troia Chocobo forest","Island Chocobo forest","Baron Empty throne room","Empty airship w/ black bg","Empty airship","Empty airship underground","Empty airship w/ black bg","Tower of Wishes - final battle","Airship background","Large dock","-Glitch world-","-Glitch world-","Small dock","Mist Inn","Mist Weapons","Mist Armor","Kaipo Weapons","Kaipo Armor","Mysidia Weapons","Mysidia Armor","Mysidia Item store","Mythril Inn","Mythril Weapons","Mythril Armor","Mythril Items","Baron Items","Ending - Tower of Wishes","Ending - Palom and Leonora","Ending - Eblan throne room","Ending - Leviathan's room","Ending - Damcyan","Ending - Dwarf Castle","Ending - Mount Ordeals","Ending - Astro Tower","Ending - Cecil's room","Ending - Baron throne room","Ending - Fabul throne room","-Glitch world-","-Glitch world-","-Glitch world-","Overworld","Underworld","Moon surface","current map","Location trigger / VFX call","Smithy's house","Tomra","Smithy's house main floor","Smithy's house Smithy's room","Tomra Inn","Tomra Equipment store","Tomra Treasury","Dwarf Castle","Dwarf Castle Lobby","Dwarf Castle Throne room","Dwarf Castle Fat Chocobo room","Dwarf Castle Basement tunnel","Crystal room background","Dwarf Castle Crystal room","Dwarf Castle Equipment room","Dwarf Castle Basement w/ recovery pot","Dwarf Castle East tower 1F","Dwarf Castle Inn","Dwarf Castle Hospital","Dwarf Castle West tower 1F","Tower of Babil Save point","Tower of Babil Icebrand room","Tower of Babil Blizzard room","Tower of Babil Ice shield room","Tower of Babil Ice mail room","Dwarf Castle East tower 3F","Dwarf Castle West tower 3F","Dwarf Castle both towers 2F","Dwarf Castle background","Tower of Babil Floor w/ Lugae - 1","Tower of Babil Floor w/ Ice mail - 1","Tower of Babil Floor w/ Airship - 1","Dwarf Castle Cafe","Tower of Babil 1F","Tower of Babil 2F","Tower of Babil 3F","Tower of Babil 4F","Tower of Babil 5F","Tower of Babil Floor w/ airship - 2","Tower of Babil Floor w/ Ice mail - 2","Tower of Babil Floor w/ Lugae - 2","-Glitch world-","-Glitch world-","-Glitch world-","Lunar whale","Tower of Babil Cannon room","Dwarf tank","Lunar whale","Tower of Babil background","Ending - Palom and Leonora","Tomra Items","Tower of Wishes Top floor after Giant","Castle floor background","Town water background","Cave of Summons 1F","Cave of Summons 2F","Cave of Summons 3F","Sylvan Cave background","Feymarch 1F","Feymarch Treasury","Feymarch 2F","Feymarch House w/ save point","Feymarch Library 1F","Feymarch Library 2F","Feymarch Leviathan's room","Feymarch Weapons","Feymarch Armor","Feymarch Inn","Sealed Cave entrance","Sylvan Cave 1F","Sylvan Cave 2F","Sylvan Cave 3F","Sylvan Cave Treasury","Sylvan Cave Yang's room","Sealed Cave 1F","Sealed Cave Room w/ katana, ether","Sealed Cave 2F","Sealed Cave 3F","Sealed Cave Room w/ katana, ninja hat","Sealed Cave Room w/ ninja star, elixir","Sealed Cave Room w/ Light sword","Sealed Cave 4F","Sealed Cave 5F","Sealed Cave 6F","Sealed Cave Room w/ many boxes","Sealed Cave 7F","Sealed Cave Save point room","Sealed Cave Room w/ Demon Wall","Sealed Cave Empty room","Sealed Cave Crystal room","Bahamut's Cave 1F","Bahamut's Cave 2F","Bahamut's Cave Bahamut's floor","-Glitch world-","-Glitch world-","-Glitch world-","Lunar Palace Lobby","Lunar Palace Crystal room","Lunar background","First lunar passage","Second lunar passage","Hummingway land","Lunar's Lair background","Lunar Subterran 1F","Lunar Subterran 2F","Lunar Subterran 3F","Lunar Subterran 4F","Lunar Subterran 5F","Lunar Subterran 6F","Lunar Subterran 7F","Lunar Core 1F","Lunar Core 2F","Lunar Core 3F","Lunar Core 4F","Lunar Core Zemus' room","Lunar Subterran Room w/elixir","Lunar Subterran Tunnel w/ 2 Cure3s","Lunar Subterran Tunnel w/ Protect ring","Lunar Subterran Tunnel w/ White robe","Lunar Subterran Pinkpuff room","Lunar Subterran Save point near Ragnarok","Lunar Subterran Tunnel w/ Minerva","Lunar Subterran Room w/ Holy lance","Lunar Subterran Save point room","Lunar Subterran Room w/ Ribbons","Lunar Core background","-Glitch world-","-Glitch world-"}
 
 areas[-3]="DummyValue"
@@ -60,10 +65,33 @@ Underground={"Underground",-2,Smithy,Tomra,Dwarf,Feymarch}
 MoonArea={"Moon",-1,Moon}
 Dungeons={"Dungeons",-4,MistCave,WateryPass,Antlion,Hobbs,Ordeals,CaveMagnes,Zot,HookStuff,Babil,Sylph,SealedCave,Giant}
 
+for i=0, 7 do
+	KIsb[i]=0
+end
+for i=0, 63 do
+	KIs[i]=0
+end
+
 for i=-4, 80000 do
 	area_battles[i]=0
 	area_frames[i]=0
 	area_menus[i]=0
+end
+
+
+local function checkKIs()
+	local nbs=0;
+	for i=0, 7 do
+		Bs=memory.readbyte(0x7E1514+i)
+		nbs=bit.bnot(KIsb[i])
+		nbs=bit.band(nbs,Bs)
+		for j=0,7 do
+			if(bit.band(nbs,bit.lshift(1,j)) ~= 0) then
+				KIsb[i]=bit.bor(KIsb[i],bit.lshift(1,j))
+				KIs[8*i+j]=emu.framecount()-startTime
+			end
+		end
+	end
 end
 
 function file_exists(name) --https://stackoverflow.com/questions/4990990/check-if-a-file-exists-with-lua
@@ -95,11 +123,13 @@ local function myframe()
 		elseif menu == 170 then
 			area_menus[mapID] = area_menus[mapID] + 1
 		end
+		checkKIs()
 	else
 		gui.text(70,6, "paused")
 		if not (menu == 170) then
 			started=true
 			lagcount=emu.lagcount()
+			startTime=emu.framecount()
 			--gui.text(50,60, 2)
 		end
 	end
@@ -107,6 +137,17 @@ end
 
 local function FormatTime(t)
 	return string.format("\"minutes\":%d,\n\"seconds\":%d,\n\"frames\":%d\n",t/3600,(t%3600)/60,t%60)
+end
+
+local function FormatKI()
+	io.write(string.format("\"KIs\": [\n"))
+	for i=0,58 do
+		io.write(string.format("{\n\"name\": \"%s\",\n",KIsMap[i+1]))
+		io.write(string.format("\"time\": {\n%s},\n},",FormatTime(KIs[i])))
+		
+	end
+	io.write(string.format("{\n\"name\": \"%s\",\n",KIsMap[62]))
+	io.write(string.format("\"time\": {\n%s},\n}\n],",FormatTime(KIs[61])))
 end
 
 local function FormatBottom(mylist)
@@ -217,6 +258,7 @@ local function myexit()
 	io.write(string.format(",\n\"time\": {\n%s},\n",FormatTime(timet)))
 	io.write(string.format("\"menu\": {\n%s},\n",FormatTime(timem)))
 	io.write(string.format("\"battle\": {\n%s},\n",FormatTime(timeb)))
+	FormatKI()
 	io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
 	io.close(file)
 end
