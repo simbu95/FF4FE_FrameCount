@@ -77,7 +77,7 @@ end
 for i=0, 7 do
 	LocationBinary[i]=0
 end
-for i=0, 17 do
+for i=0, 16 do
 	KIsToLocMap[i]=-1
 end
 for i=-1, 63 do
@@ -185,9 +185,9 @@ local function FormatKI()
 		io.write(string.format("\"time\": {\n%s}\n},",FormatTime(LocTimes[KIsToLocMap[i]])))
 		
 	end
-	io.write(string.format("{\n\"name\": \"%s\",\n",KIsNames[16]))
-	io.write(string.format("\"Location Found\": \"%s\",\n",LocNames[KIsToLocMap[15]+1]))
-	io.write(string.format("\"time\": {\n%s}\n}\n],\n",FormatTime(LocTimes[KIsToLocMap[15]])))
+	io.write(string.format("{\n\"name\": \"%s\",\n",KIsNames[17]))
+	io.write(string.format("\"Location Found\": \"%s\",\n",LocNames[KIsToLocMap[16]+1]))
+	io.write(string.format("\"time\": {\n%s}\n}\n],\n",FormatTime(LocTimes[KIsToLocMap[16]])))
 end
 
 local function FormatBottom(mylist)
