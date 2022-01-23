@@ -175,7 +175,7 @@ local function myframe()
 				if mapID>=0 and idToArea[mapID]~= currentArea then
 					currentArea=idToArea[mapID]
 					AreaString=string.format("%s,%d",AreaString,currentArea)
-					FramesString=string.format("%s,%d",FramesString,emu.framecount()-startTime)
+					FramesString=string.format("%s,%d",FramesString,(emu.framecount()-startTime)/60)
 				end
 			end
 		end
@@ -192,7 +192,7 @@ local function myframe()
 end
 
 local function FormatTime(t)
-	return string.format("\"minutes\":%d,\n\"seconds\":%d,\n\"frames\":%d\n",t/3600,(t%3600)/60,t%60)
+	return string.format("\"minutes\":%d,\n\"seconds\":%d\n",t/3600,(t%3600)/60)
 end
 
 local function FormatKILoc()
