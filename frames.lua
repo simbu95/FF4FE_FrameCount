@@ -15,7 +15,7 @@ LocNames[0]=""
 KIsNames={"Package","Sandruby","Legend Sword","Baron Key","Twinharp","Earth Crystal","Magma Key","Tower Key","Hook","Luca Key","Darkness Crystal","Rat Tail","Adamant","Pan","Spoon","Pink Tail","Crystal"}
 KIsNames[0]=""
 areas={"Baron Town","Mist","Kaipo","Mysidia","Mythril","Troia Town","Agart","Troia Inn","Troia Weapons","Troia Armor","Troia Items","Baron Inn","Baron Equipment","Cid's house","Rosa's house","Rydia's house","Kaipo Inn","Kaipo Cafe","Kaipo Hospital","Mysidia Cafe","Mysidia Inn","Mount Ordeals Mirror Room","House of Wishes","Room of Wishes","Troia Cafe main floor","Troia Cafe upstairs","Troia Dancers' stage","-Glitch world-","Troia Chocobo stable entrance","Troia Chocobo stable downstairs","Astro Tower main hall","Astro Tower Observatory","Agart Inn","Large chocobo forest near Troia","Town water background","Castle floor background","Baron Castle","Damcyan","Fabul","Troia Castle","Eblan","Desert background","Baron Castle Lobby","Baron Castle Outer court","Baron Castle Throne room","Baron Castle West Hall","Baron Castle East Hall","Baron Castle Prison entrance","Baron Castle Prison","Baron Castle Soldiers' quarters","Baron Castle West tower 1F","Baron Castle West tower 2F","Baron Castle Cecil's room","Baron Castle East tower 1F","Baron Castle East tower 2F","Baron Castle East tower 3F","Baron Castle East tower B1","Baron Castle Odin's room","Sewer entrance","Sewer B3","Sewer B1","Sewer Save point room","Sewer B2","Damcyan 1F","Damcyan 2F","Damcyan 3F","Damcyan Treasury entrance","Damcyan Treasury downstairs","Room leading to sewer","Agart Weapons","Agart Armor","Fabul Lobby","Fabul Second floor","Fabul Throne room","Fabul Crystal room","Fabul Equipment store","Fabul Inn","Fabul East tower 1F","Fabul East tower 2F","Fabul King's room","Fabul West tower 1F","Fabul Hostpital","Fabul Yang's room","Forest where you lose Kain","Watery Pass Save point room","Troia Castle Lobby","Troia Castle Clerics' room","Troia Castle Crystal room","Troia Castle Hospital","Troia Castle Room w/ 3 stairs","Troia Castle Hall to treasury","Troia Castle Room w/ random pots","Troia Castle Room w/ rubyring chests","Troia Castle Main treasury","Eblan 1F","Eblan 2F","Eblan Throne room","Eblan West tower 1F","Eblan West tower 2F","Eblan East tower 1F","Eblan East tower 2F","Eblan Basement","Baron Castle Black magic school","Baron Castle White magic school","Desert background","Training room","Waterfall","Castle water background","Misty cave","Mirror room background","Watery Pass background","Watery Pass 1F","Watery Pass 2F","Watery Pass 3F","Watery Pass 4F","Watery Pass 5F","Waterfall entrance","Waterfall 1F","Waterfall 2F","Antlion Cave 1F","Antlion Cave 2F","Antlion Cave Antlion's nest","Antlion Cave Save point room","Antlion Cave Treasure room w/ harp","Black background","Mist background","Mount Hobs West","Mount Hobs Summit","Mount Hobs East","Mount Hobs Save point floor","Mountain background","Watery Pass Room behind waterfall","Mount Ordeals 1F","Mount Ordeals 2F","Mount Ordeals 3F","Mount Ordeals Summit","Mysidia Crystal room","Mysidia Devil's Road","Baron Castle Collapsing hallway","Agart Well","Cave Magnes 1F","Cave Magnes 2F","Cave Magnes Treasure room w/ pit","Cave Magnes 3F","Cave Magnes Treasure room w/ torch","Cave Magnes 4F","Cave Magnes Save point room","Cave Magnes 5F","Cave Magnes Crystal room","Cave Magnes background","Watery Pass campsite","Baron Devil's Road","Tower of Zot 1F","Tower of Zot 2F","Tower of Zot 3F","Pitch black room","Tower of Zot 4F","Tower of Zot 5F","Tower of Zot 6F","Tower of Zot Command center","Adamant Grotto","Cave Magnes Save point room","Tower of Zot Save point room","Cid's Airship - Giant sequence","Twins' Airship - Giant sequence","Edward's Airship - Giant sequence","Tower of Babil Save point room","Tower of Babil B1","Tower of Babil B2","Tower of Babil B3","Tower of Babil B4","Tower of Babil Crystal room","Tower of Babil B5","Scrolling mountains - Cid falling?","Underground tunnel background","Crystal room background","Ending - Cecil's room","Training room Main floor","Training room Upstairs","-Glitch world-","-Glitch world-","Giant of Babil Mouth","Giant of Babil Neck","Giant of Babil Chest","-Glitch world-","Giant of Babil Stomach","Giant of Babil Passage","-Glitch world-","Giant of Babil Lung","Giant of Babil CPU","Giant of Babil background","-Glitch world-","Moving airship with soldiers","Fabul port","Boat sailing","Airship docked","Joined airships","Empty airship","Airship flying over underworld","Cave Eblan entrance","Cave Eblan Settlement","Cave Eblan pass to Babil","Cave Eblan exit","Cave Eblan Inn","Cave Eblan Equipment store","Cave Eblan Save point room","Cave Eblan Hospital","Fabul Chocobo forest","Empty airship","Mount Ordeals Chocobo forest","Baron Chocobo forest","Troia Chocobo forest","Island Chocobo forest","Baron Empty throne room","Empty airship w/ black bg","Empty airship","Empty airship underground","Empty airship w/ black bg","Tower of Wishes - final battle","Airship background","Large dock","-Glitch world-","-Glitch world-","Small dock","Mist Inn","Mist Weapons","Mist Armor","Kaipo Weapons","Kaipo Armor","Mysidia Weapons","Mysidia Armor","Mysidia Item store","Mythril Inn","Mythril Weapons","Mythril Armor","Mythril Items","Baron Items","Ending - Tower of Wishes","Ending - Palom and Leonora","Ending - Eblan throne room","Ending - Leviathan's room","Ending - Damcyan","Ending - Dwarf Castle","Ending - Mount Ordeals","Ending - Astro Tower","Ending - Cecil's room","Ending - Baron throne room","Ending - Fabul throne room","-Glitch world-","-Glitch world-","-Glitch world-","Overworld","Underworld","Moon surface","current map","Location trigger / VFX call","Smithy's house","Tomra","Smithy's house main floor","Smithy's house Smithy's room","Tomra Inn","Tomra Equipment store","Tomra Treasury","Dwarf Castle","Dwarf Castle Lobby","Dwarf Castle Throne room","Dwarf Castle Fat Chocobo room","Dwarf Castle Basement tunnel","Crystal room background","Dwarf Castle Crystal room","Dwarf Castle Equipment room","Dwarf Castle Basement w/ recovery pot","Dwarf Castle East tower 1F","Dwarf Castle Inn","Dwarf Castle Hospital","Dwarf Castle West tower 1F","Tower of Babil Save point","Tower of Babil Icebrand room","Tower of Babil Blizzard room","Tower of Babil Ice shield room","Tower of Babil Ice mail room","Dwarf Castle East tower 3F","Dwarf Castle West tower 3F","Dwarf Castle both towers 2F","Dwarf Castle background","Tower of Babil Floor w/ Lugae - 1","Tower of Babil Floor w/ Ice mail - 1","Tower of Babil Floor w/ Airship - 1","Dwarf Castle Cafe","Tower of Babil 1F","Tower of Babil 2F","Tower of Babil 3F","Tower of Babil 4F","Tower of Babil 5F","Tower of Babil Floor w/ airship - 2","Tower of Babil Floor w/ Ice mail - 2","Tower of Babil Floor w/ Lugae - 2","-Glitch world-","-Glitch world-","-Glitch world-","Lunar whale","Tower of Babil Cannon room","Dwarf tank","Lunar whale","Tower of Babil background","Ending - Palom and Leonora","Tomra Items","Tower of Wishes Top floor after Giant","Castle floor background","Town water background","Cave of Summons 1F","Cave of Summons 2F","Cave of Summons 3F","Sylvan Cave background","Feymarch 1F","Feymarch Treasury","Feymarch 2F","Feymarch House w/ save point","Feymarch Library 1F","Feymarch Library 2F","Feymarch Leviathan's room","Feymarch Weapons","Feymarch Armor","Feymarch Inn","Sealed Cave entrance","Sylvan Cave 1F","Sylvan Cave 2F","Sylvan Cave 3F","Sylvan Cave Treasury","Sylvan Cave Yang's room","Sealed Cave 1F","Sealed Cave Room w/ katana, ether","Sealed Cave 2F","Sealed Cave 3F","Sealed Cave Room w/ katana, ninja hat","Sealed Cave Room w/ ninja star, elixir","Sealed Cave Room w/ Light sword","Sealed Cave 4F","Sealed Cave 5F","Sealed Cave 6F","Sealed Cave Room w/ many boxes","Sealed Cave 7F","Sealed Cave Save point room","Sealed Cave Room w/ Demon Wall","Sealed Cave Empty room","Sealed Cave Crystal room","Bahamut's Cave 1F","Bahamut's Cave 2F","Bahamut's Cave Bahamut's floor","-Glitch world-","-Glitch world-","-Glitch world-","Lunar Palace Lobby","Lunar Palace Crystal room","Lunar background","First lunar passage","Second lunar passage","Hummingway land","Lunar's Lair background","Lunar Subterran 1F","Lunar Subterran 2F","Lunar Subterran 3F","Lunar Subterran 4F","Lunar Subterran 5F","Lunar Subterran 6F","Lunar Subterran 7F","Lunar Core 1F","Lunar Core 2F","Lunar Core 3F","Lunar Core 4F","Lunar Core Zemus' room","Lunar Subterran Room w/elixir","Lunar Subterran Tunnel w/ 2 Cure3s","Lunar Subterran Tunnel w/ Protect ring","Lunar Subterran Tunnel w/ White robe","Lunar Subterran Pinkpuff room","Lunar Subterran Save point near Ragnarok","Lunar Subterran Tunnel w/ Minerva","Lunar Subterran Room w/ Holy lance","Lunar Subterran Save point room","Lunar Subterran Room w/ Ribbons","Lunar Core background","-Glitch world-","-Glitch world-"}
-idToArea={3,4,5,6,7,9,7,7,7,7,1,1,1,1,3,4,4,4,5,5,22,5,5,7,7,7,32,7,7,9,9,9,13,32,32,2,10,11,8,12,32,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,10,10,10,10,1,9,9,11,11,11,11,11,11,11,11,11,11,11,11,3,19,8,8,8,8,8,8,8,8,8,12,12,12,12,12,12,12,12,2,2,32,32,19,32,18,32,32,19,19,19,19,19,19,19,19,20,20,20,20,20,32,32,21,21,21,21,32,19,22,22,22,22,5,5,2,9,23,23,23,23,23,23,23,23,23,23,19,1,24,24,24,32,24,24,24,24,25,23,24,32,32,32,25,25,25,25,25,25,25,32,32,32,32,32,32,32,32,29,29,29,32,29,29,32,29,29,29,32,32,32,32,32,32,32,32,25,25,25,25,25,25,25,25,13,32,13,13,13,13,2,32,32,32,32,32,32,32,32,32,32,3,3,3,4,4,5,5,5,6,6,6,6,1,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,14,15,14,14,15,15,15,16,16,16,16,16,32,16,16,16,16,16,16,16,26,26,26,26,26,16,16,16,32,26,26,26,16,26,26,26,26,26,26,26,26,32,32,32,32,26,32,30,32,32,15,32,32,32,17,17,17,32,17,17,17,17,17,17,17,17,17,17,28,27,27,27,27,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,30,30,30,32,32,32,30,30,32,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,31,30,30,30,30,30,30,30,30,30,30,32,32,32}
+idToArea={3,4,5,6,7,9,7,7,7,7,1,1,1,1,3,4,4,4,5,5,22,5,5,7,7,7,32,7,7,9,9,9,13,32,32,2,10,11,8,12,32,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,10,10,10,10,1,9,9,11,11,11,11,11,11,11,11,11,11,11,11,3,19,8,8,8,8,8,8,8,8,8,12,12,12,12,12,12,12,12,2,2,32,32,19,32,18,32,32,19,19,19,19,19,19,19,19,20,20,20,20,20,32,32,21,21,21,21,32,19,22,22,22,22,5,5,2,9,23,23,23,23,23,23,23,23,23,23,19,1,24,24,24,32,24,24,24,24,25,23,24,32,32,32,25,25,25,25,25,25,25,32,32,32,32,32,32,32,32,29,29,29,32,29,29,32,29,29,29,29,32,32,32,2,32,32,26,25,25,25,25,25,25,25,25,13,32,13,13,13,13,2,32,32,32,32,32,32,32,32,32,32,3,3,3,4,4,5,5,5,6,6,6,6,1,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,14,15,14,14,15,15,15,16,16,16,16,16,32,16,16,16,16,16,16,16,26,26,26,26,26,16,16,16,32,26,26,26,16,26,26,26,26,26,26,26,26,32,32,32,32,26,32,30,32,32,15,5,32,32,17,17,17,32,17,17,17,17,17,17,17,17,17,17,28,27,27,27,27,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,30,30,30,32,32,32,30,30,32,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,31,30,30,30,30,30,30,30,30,30,30,32,32,32}
 idToArea[0]=1
 currentArea=2
 currentID=0
@@ -25,16 +25,17 @@ currentY=0
 Steps=0
 TilesFlown=0
 AreaString="2"
+FramesString="0"
 areas[-3]="DummyValue"
 areas[-2]="OverworldMap"
 areas[-1]="UndergroundMap"
 areas[0]="MoonSurface"
 
 Baron={"Baron Town Areas",0,11,12,13,14,68,151,236}
-BaronCastle={"Baron Castle Areas",36,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,102,103,138,213}
+BaronCastle={"Baron Castle Areas",36,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,102,103,124,138,195,213}
 Mist={"Mist Areas",1,15,83,224,225,226}
 Kaipo={"Kaipo Areas",2,16,17,18,227,228}
-Mysidia={"Mysidia Areas",3,19,20,22,23,136,137,229,230,231}
+Mysidia={"Mysidia Areas",3,19,20,22,23,136,137,229,230,231,307}
 Mythril={"Mythril Areas",4,232,233,234,235}
 Troia={"Troia Areas",5,7,8,9,10,24,25,26,28,29}
 TroiaCastle={"Troia Castle Areas",39,85,86,87,88,89,90,91,92,93}
@@ -61,10 +62,10 @@ Zot={"Zot Areas",152,153,154,156,157,158,159,162}
 HookStuff={"Hook Stuff",160,166,167,168,169,170,171,172,199,200,201,202,203,204,205,206}
 
 -- Need to check what is happening with 285-287, and 294-296, One of them belongs to hook route I think
-Babil={"Babil Areas",276,277,278,279,280,285,286,287,289,290,291,292,293,294,295,296,301}
+Babil={"Babil Areas",198,276,277,278,279,280,285,286,287,289,290,291,292,293,294,295,296,301}
 Sylph={"Sylph Areas",325,326,327,328,329}
 SealedCave={"Sealed Cave Areas",324,330,331,332,333,334,335,336,337,338,339,340,341,342,343,344,345}
-Giant={"Giant Areas",181,182,183,185,186,188,189,190}
+Giant={"Giant Areas",181,182,183,185,186,188,189,190,191}
 Moon={"Moon Areas",303,346,347,348,352,353,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,371,372,373,374,375,376,377,378,379,380}
 Zeromus={"Zeromus",370}
 
@@ -72,7 +73,7 @@ Zeromus={"Zeromus",370}
 
 
 
-Misc={"Misc",27,34,35,41,104,105,107,109,110,124,125,130,155,163,164,165,173,174,175,176,177,178,179,180,184,187,191,192,193,194,195,196,197,198,208,214,215,216,217,218,219,220,221,222,223,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,268,284,297,298,299,300,302,304,305,307,308,309,313,349,350,351,354,381,382,383}
+Misc={"Misc",27,34,35,41,104,105,107,109,110,125,130,155,163,164,165,173,174,175,176,177,178,179,180,184,187,192,193,194,196,197,208,214,215,216,217,218,219,220,221,222,223,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,268,284,297,298,299,300,302,304,305,308,309,313,349,350,351,354,381,382,383}
 
 Overworld={"Overworld",-3,Baron,BaronCastle,Mist,Kaipo,Mysidia,Mythril,Troia,TroiaCastle,Agart,Damcyan,Fabul,Eblan,Chocobo}
 Underground={"Underground",-2,Smithy,Tomra,Dwarf,Feymarch}
@@ -153,7 +154,8 @@ local function myframe()
 		if area == 2 then
 			mapID = -1
 		end
-		--gui.text(50,60, area_frames[0])
+		--gui.text(50,60, areas[mapID+1])
+		--gui.text(50,70, idToArea[mapID])
 		area_frames[mapID] = area_frames[mapID] + 1
 		if battle ~= 0x85 then
 			area_battles[mapID] = area_battles[mapID] + 1
@@ -173,6 +175,7 @@ local function myframe()
 				if mapID>=0 and idToArea[mapID]~= currentArea then
 					currentArea=idToArea[mapID]
 					AreaString=string.format("%s,%d",AreaString,currentArea)
+					FramesString=string.format("%s,%d",FramesString,emu.framecount()-startTime)
 				end
 			end
 		end
@@ -330,6 +333,7 @@ local function myexit()
 	io.write(string.format("\"Fly\": %d,\n",TilesFlown))
 	io.write(string.format("\"Transitions\": %d,\n",Transitions))
 	io.write(string.format("\"Route\": \"%s\",\n",AreaString))
+	io.write(string.format("\"RouteTime\": \"%s\",\n",FramesString))
 	FormatKI()
 	FormatKILoc()
 	io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
