@@ -24,8 +24,10 @@ currentX=0
 currentY=0
 Steps=0
 TilesFlown=0
-AreaString="2"
-FramesString="0"
+AreaString = {"2"}
+DetailedString = {"0"}
+FramesString = {"0"}
+FramesDetailed = {"0"}
 areas[-3]="DummyValue"
 areas[-2]="OverworldMap"
 areas[-1]="UndergroundMap"
@@ -172,10 +174,12 @@ local function myframe()
 			if currentID~=mapID then
 				Transitions=Transitions+1
 				currentID=mapID
+				table.insert(DetailedString, string.format("%d",mapID))
+				table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
 				if mapID>=0 and idToArea[mapID]~= currentArea then
 					currentArea=idToArea[mapID]
-					AreaString=string.format("%s,%d",AreaString,currentArea)
-					FramesString=string.format("%s,%d",FramesString,(emu.framecount()-startTime)/60)
+					table.insert(AreaString,string.format("%d",currentArea))
+					table.insert(FramesString,string.format("%d",(emu.framecount()-startTime)/60))
 				end
 			end
 		end
@@ -332,8 +336,10 @@ local function myexit()
 	io.write(string.format("\"Steps\": %d,\n",Steps))
 	io.write(string.format("\"Fly\": %d,\n",TilesFlown))
 	io.write(string.format("\"Transitions\": %d,\n",Transitions))
-	io.write(string.format("\"Route\": \"%s\",\n",AreaString))
-	io.write(string.format("\"RouteTime\": \"%s\",\n",FramesString))
+	io.write(string.format("\"Route\": \"%s\",\n", table.concat(AreaString, ",")))
+	io.write(string.format("\"RouteTime\": \"%s\",\n",table.concat(FramesString, ",")))
+	io.write(string.format("\"RouteDetailed\": \"%s\",\n",table.concat(DetailedString, ",")))
+	io.write(string.format("\"RouteDetailedTime\": \"%s\",\n",table.concat(FramesDetailed, ",")))
 	FormatKI()
 	FormatKILoc()
 	io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
