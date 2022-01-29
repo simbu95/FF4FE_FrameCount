@@ -27,3 +27,7 @@ To eventually allow a database of seed info to be used, I have added in a python
 # Features Comming Soon
 
 abigtoe is working on a website to take a json file as input, and display everything in a tidy manner, along with other interesting breakdowns. You can try it at https://chrono.abigtoe.org/
+
+# Known Issues
+When recieving the hook from a trapped chest, it won't correctly track the hook being recieved in the KI details.
+Unfortunately there seems to be a disconnect between clearing the trapped chest, and the hook being marked as obtained, and it seems to only effect the hook and trapped chests (probably because its not actually an item that appears on the treasure screen). With how rare and singular it is, there is probably no reason to try to fix it. 
