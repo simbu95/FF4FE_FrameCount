@@ -3,11 +3,13 @@ lagcount=0
 started=false
 Battle=false
 Menu=false;
+Exited=false;
 
 area_battles = {}
 area_frames = {}
 area_menus = {}
 LocTimes={}
+LocParty={}
 LocationBinary={}
 LocationBinaryinary={}
 KIsToLocMap={}
@@ -19,6 +21,8 @@ KIsNames[0]=""
 areas={"Baron Town","Mist","Kaipo","Mysidia","Mythril","Troia Town","Agart","Troia Inn","Troia Weapons","Troia Armor","Troia Items","Baron Inn","Baron Equipment","Cid's house","Rosa's house","Rydia's house","Kaipo Inn","Kaipo Cafe","Kaipo Hospital","Mysidia Cafe","Mysidia Inn","Mount Ordeals Mirror Room","House of Wishes","Room of Wishes","Troia Cafe main floor","Troia Cafe upstairs","Troia Dancers' stage","-Glitch world-","Troia Chocobo stable entrance","Troia Chocobo stable downstairs","Astro Tower main hall","Astro Tower Observatory","Agart Inn","Large chocobo forest near Troia","Town water background","Castle floor background","Baron Castle","Damcyan","Fabul","Troia Castle","Eblan","Desert background","Baron Castle Lobby","Baron Castle Outer court","Baron Castle Throne room","Baron Castle West Hall","Baron Castle East Hall","Baron Castle Prison entrance","Baron Castle Prison","Baron Castle Soldiers' quarters","Baron Castle West tower 1F","Baron Castle West tower 2F","Baron Castle Cecil's room","Baron Castle East tower 1F","Baron Castle East tower 2F","Baron Castle East tower 3F","Baron Castle East tower B1","Baron Castle Odin's room","Sewer entrance","Sewer B3","Sewer B1","Sewer Save point room","Sewer B2","Damcyan 1F","Damcyan 2F","Damcyan 3F","Damcyan Treasury entrance","Damcyan Treasury downstairs","Room leading to sewer","Agart Weapons","Agart Armor","Fabul Lobby","Fabul Second floor","Fabul Throne room","Fabul Crystal room","Fabul Equipment store","Fabul Inn","Fabul East tower 1F","Fabul East tower 2F","Fabul King's room","Fabul West tower 1F","Fabul Hostpital","Fabul Yang's room","Forest where you lose Kain","Watery Pass Save point room","Troia Castle Lobby","Troia Castle Clerics' room","Troia Castle Crystal room","Troia Castle Hospital","Troia Castle Room w/ 3 stairs","Troia Castle Hall to treasury","Troia Castle Room w/ random pots","Troia Castle Room w/ rubyring chests","Troia Castle Main treasury","Eblan 1F","Eblan 2F","Eblan Throne room","Eblan West tower 1F","Eblan West tower 2F","Eblan East tower 1F","Eblan East tower 2F","Eblan Basement","Baron Castle Black magic school","Baron Castle White magic school","Desert background","Training room","Waterfall","Castle water background","Misty cave","Mirror room background","Watery Pass background","Watery Pass 1F","Watery Pass 2F","Watery Pass 3F","Watery Pass 4F","Watery Pass 5F","Waterfall entrance","Waterfall 1F","Waterfall 2F","Antlion Cave 1F","Antlion Cave 2F","Antlion Cave Antlion's nest","Antlion Cave Save point room","Antlion Cave Treasure room w/ harp","Black background","Mist background","Mount Hobs West","Mount Hobs Summit","Mount Hobs East","Mount Hobs Save point floor","Mountain background","Watery Pass Room behind waterfall","Mount Ordeals 1F","Mount Ordeals 2F","Mount Ordeals 3F","Mount Ordeals Summit","Mysidia Crystal room","Mysidia Devil's Road","Baron Castle Collapsing hallway","Agart Well","Cave Magnes 1F","Cave Magnes 2F","Cave Magnes Treasure room w/ pit","Cave Magnes 3F","Cave Magnes Treasure room w/ torch","Cave Magnes 4F","Cave Magnes Save point room","Cave Magnes 5F","Cave Magnes Crystal room","Cave Magnes background","Watery Pass campsite","Baron Devil's Road","Tower of Zot 1F","Tower of Zot 2F","Tower of Zot 3F","Pitch black room","Tower of Zot 4F","Tower of Zot 5F","Tower of Zot 6F","Tower of Zot Command center","Adamant Grotto","Cave Magnes Save point room","Tower of Zot Save point room","Cid's Airship - Giant sequence","Twins' Airship - Giant sequence","Edward's Airship - Giant sequence","Tower of Babil Save point room","Tower of Babil B1","Tower of Babil B2","Tower of Babil B3","Tower of Babil B4","Tower of Babil Crystal room","Tower of Babil B5","Scrolling mountains - Cid falling?","Underground tunnel background","Crystal room background","Ending - Cecil's room","Training room Main floor","Training room Upstairs","-Glitch world-","-Glitch world-","Giant of Babil Mouth","Giant of Babil Neck","Giant of Babil Chest","-Glitch world-","Giant of Babil Stomach","Giant of Babil Passage","-Glitch world-","Giant of Babil Lung","Giant of Babil CPU","Giant of Babil background","-Glitch world-","Moving airship with soldiers","Fabul port","Boat sailing","Airship docked","Joined airships","Empty airship","Airship flying over underworld","Cave Eblan entrance","Cave Eblan Settlement","Cave Eblan pass to Babil","Cave Eblan exit","Cave Eblan Inn","Cave Eblan Equipment store","Cave Eblan Save point room","Cave Eblan Hospital","Fabul Chocobo forest","Empty airship","Mount Ordeals Chocobo forest","Baron Chocobo forest","Troia Chocobo forest","Island Chocobo forest","Baron Empty throne room","Empty airship w/ black bg","Empty airship","Empty airship underground","Empty airship w/ black bg","Tower of Wishes - final battle","Airship background","Large dock","-Glitch world-","-Glitch world-","Small dock","Mist Inn","Mist Weapons","Mist Armor","Kaipo Weapons","Kaipo Armor","Mysidia Weapons","Mysidia Armor","Mysidia Item store","Mythril Inn","Mythril Weapons","Mythril Armor","Mythril Items","Baron Items","Ending - Tower of Wishes","Ending - Palom and Leonora","Ending - Eblan throne room","Ending - Leviathan's room","Ending - Damcyan","Ending - Dwarf Castle","Ending - Mount Ordeals","Ending - Astro Tower","Ending - Cecil's room","Ending - Baron throne room","Ending - Fabul throne room","-Glitch world-","-Glitch world-","-Glitch world-","Overworld","Underworld","Moon surface","current map","Location trigger / VFX call","Smithy's house","Tomra","Smithy's house main floor","Smithy's house Smithy's room","Tomra Inn","Tomra Equipment store","Tomra Treasury","Dwarf Castle","Dwarf Castle Lobby","Dwarf Castle Throne room","Dwarf Castle Fat Chocobo room","Dwarf Castle Basement tunnel","Crystal room background","Dwarf Castle Crystal room","Dwarf Castle Equipment room","Dwarf Castle Basement w/ recovery pot","Dwarf Castle East tower 1F","Dwarf Castle Inn","Dwarf Castle Hospital","Dwarf Castle West tower 1F","Tower of Babil Save point","Tower of Babil Icebrand room","Tower of Babil Blizzard room","Tower of Babil Ice shield room","Tower of Babil Ice mail room","Dwarf Castle East tower 3F","Dwarf Castle West tower 3F","Dwarf Castle both towers 2F","Dwarf Castle background","Tower of Babil Floor w/ Lugae - 1","Tower of Babil Floor w/ Ice mail - 1","Tower of Babil Floor w/ Airship - 1","Dwarf Castle Cafe","Tower of Babil 1F","Tower of Babil 2F","Tower of Babil 3F","Tower of Babil 4F","Tower of Babil 5F","Tower of Babil Floor w/ airship - 2","Tower of Babil Floor w/ Ice mail - 2","Tower of Babil Floor w/ Lugae - 2","-Glitch world-","-Glitch world-","-Glitch world-","Lunar whale","Tower of Babil Cannon room","Dwarf tank","Lunar whale","Tower of Babil background","Ending - Palom and Leonora","Tomra Items","Tower of Wishes Top floor after Giant","Castle floor background","Town water background","Cave of Summons 1F","Cave of Summons 2F","Cave of Summons 3F","Sylvan Cave background","Feymarch 1F","Feymarch Treasury","Feymarch 2F","Feymarch House w/ save point","Feymarch Library 1F","Feymarch Library 2F","Feymarch Leviathan's room","Feymarch Weapons","Feymarch Armor","Feymarch Inn","Sealed Cave entrance","Sylvan Cave 1F","Sylvan Cave 2F","Sylvan Cave 3F","Sylvan Cave Treasury","Sylvan Cave Yang's room","Sealed Cave 1F","Sealed Cave Room w/ katana, ether","Sealed Cave 2F","Sealed Cave 3F","Sealed Cave Room w/ katana, ninja hat","Sealed Cave Room w/ ninja star, elixir","Sealed Cave Room w/ Light sword","Sealed Cave 4F","Sealed Cave 5F","Sealed Cave 6F","Sealed Cave Room w/ many boxes","Sealed Cave 7F","Sealed Cave Save point room","Sealed Cave Room w/ Demon Wall","Sealed Cave Empty room","Sealed Cave Crystal room","Bahamut's Cave 1F","Bahamut's Cave 2F","Bahamut's Cave Bahamut's floor","-Glitch world-","-Glitch world-","-Glitch world-","Lunar Palace Lobby","Lunar Palace Crystal room","Lunar background","First lunar passage","Second lunar passage","Hummingway land","Lunar's Lair background","Lunar Subterran 1F","Lunar Subterran 2F","Lunar Subterran 3F","Lunar Subterran 4F","Lunar Subterran 5F","Lunar Subterran 6F","Lunar Subterran 7F","Lunar Core 1F","Lunar Core 2F","Lunar Core 3F","Lunar Core 4F","Lunar Core Zemus' room","Lunar Subterran Room w/elixir","Lunar Subterran Tunnel w/ 2 Cure3s","Lunar Subterran Tunnel w/ Protect ring","Lunar Subterran Tunnel w/ White robe","Lunar Subterran Pinkpuff room","Lunar Subterran Save point near Ragnarok","Lunar Subterran Tunnel w/ Minerva","Lunar Subterran Room w/ Holy lance","Lunar Subterran Save point room","Lunar Subterran Room w/ Ribbons","Lunar Core background","-Glitch world-","-Glitch world-"}
 idToArea={3,4,5,6,7,9,7,7,7,7,1,1,1,1,3,4,4,4,5,5,22,5,5,7,7,7,33,7,7,9,9,9,13,33,33,2,10,11,8,12,33,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,10,10,10,10,10,1,9,9,11,11,11,11,11,11,11,11,11,11,11,11,3,19,8,8,8,8,8,8,8,8,8,12,12,12,12,12,12,12,12,2,2,33,33,19,33,18,33,33,19,19,19,19,19,19,19,19,20,20,20,20,20,26,33,21,21,21,21,33,19,22,22,22,22,5,5,2,9,23,23,23,23,23,23,23,23,23,23,19,1,24,24,24,33,24,24,24,24,25,23,24,33,33,33,25,25,25,25,25,25,25,33,33,33,33,33,33,33,33,29,29,29,33,29,29,33,29,29,29,29,33,33,33,2,33,33,26,25,25,25,25,25,25,25,25,13,33,13,13,13,13,2,33,33,33,33,33,33,33,33,33,33,3,3,3,4,4,5,5,5,6,6,6,6,1,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,33,14,15,14,14,15,15,15,16,16,16,16,16,33,16,16,16,16,16,16,16,26,26,26,26,26,16,16,16,33,26,26,26,16,26,26,26,26,26,26,26,26,33,33,33,33,26,33,31,33,33,15,5,33,33,17,17,17,33,17,17,17,17,17,17,17,17,17,17,28,27,27,27,27,27,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,28,30,30,30,33,33,33,30,30,33,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,32,30,30,30,30,30,30,30,30,30,30,33,33,33}
 idToArea[0]=1
+iToC={"Kain","Rydia","Tellah","Edward","Rosa","Yang","Palom","Porom","Cecil","Cid","Rydia","Edge","FuSoYa","Various","Golbez"}
+iToC[0]="Cecil"
 currentArea=2
 currentID=0
 Transitions=0
@@ -97,6 +101,7 @@ for i=0, 16 do
 end
 for i=-1, 63 do
 	LocTimes[i]=0
+	LocParty[i]=""
 	LocToKisMap[i]=-1
 end
 
@@ -106,6 +111,30 @@ for i=-4, 80000 do
 	area_menus[i]=0
 end
 
+local function printChars()
+	local str={}
+	
+	if(bit.band(memory.readbyte(0x7E1000),0x1f) ~= 0) then
+		table.insert(str,bit.band(memory.readbyte(0x7E1001),0x0f))
+	end
+	if(bit.band(memory.readbyte(0x7E1040),0x1f) ~= 0) then
+		table.insert(str,bit.band(memory.readbyte(0x7E1041),0x0f))
+	end
+	if(bit.band(memory.readbyte(0x7E1080),0x1f) ~= 0) then
+		table.insert(str,bit.band(memory.readbyte(0x7E1081),0x0f))
+	end
+	if(bit.band(memory.readbyte(0x7E10C0),0x1f) ~= 0) then
+		table.insert(str,bit.band(memory.readbyte(0x7E10C1),0x0f))
+	end
+	if(bit.band(memory.readbyte(0x7E1100),0x1f) ~= 0) then
+		table.insert(str,bit.band(memory.readbyte(0x7E1101),0x0f))
+	end
+	table.sort(str)
+	for i,v in ipairs(str) do
+		str[i]=iToC[v]
+	end
+	return table.concat(str,",")
+end
 
 local function checkKIs()
 	local nbs=0;
@@ -117,6 +146,7 @@ local function checkKIs()
 			if(bit.band(nbs,bit.lshift(1,j)) ~= 0) then
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
 				LocTimes[8*i+j]=emu.framecount()-startTime
+				LocParty[8*i+j]=printChars()
 				for k=0,2 do
 					Bs=memory.readbyte(0x7E1500+k)
 					nbs=bit.bnot(LocationBinaryinary[k])
@@ -199,8 +229,9 @@ local function myframe()
 					table.insert(FramesString,string.format("%d",(emu.framecount()-startTime)/60))
 				end
 			end
+		else
+			checkKIs()
 		end
-		checkKIs()
 	else
 		gui.text(70,6, "paused")
 		if not (menu == 170) then
@@ -221,12 +252,20 @@ local function FormatKILoc()
 	for i=0,58 do
 		io.write(string.format("{\n\"name\": \"%s\",\n",LocNames[i+1]))
 		io.write(string.format("\"KI Obtained\": \"%s\",\n",KIsNames[LocToKisMap[i]+1]))
-		io.write(string.format("\"time\": {\n%s}\n},",FormatTime(LocTimes[i])))
+		io.write(string.format("\"time\": {\n%s},\n",FormatTime(LocTimes[i])))
+		io.write(string.format("\"party\": \"%s\"\n},\n",LocParty[i]))
 		
 	end
 	io.write(string.format("{\n\"name\": \"%s\",\n",LocNames[62]))
 	io.write(string.format("\"KI Obtained\": \"%s\",\n",KIsNames[LocToKisMap[61]+1]))
-	io.write(string.format("\"time\": {\n%s}\n}\n],\n",FormatTime(LocTimes[61])))
+	io.write(string.format("\"time\": {\n%s},\n\n",FormatTime(LocTimes[61])))
+	io.write(string.format("\"party\": \"%s\"\n},\n",LocParty[61]))
+	
+	
+	io.write(string.format("{\n\"name\": \"%s\",\n", "Seed Complete"))
+	io.write(string.format("\"KI Obtained\": \"%s\",\n", "Victory"))
+	io.write(string.format("\"time\": {\n%s},\n\n",FormatTime(emu.framecount()-startTime)))
+	io.write(string.format("\"party\": \"%s\"\n}\n],\n",printChars()))
 end
 
 local function FormatKI()
@@ -322,60 +361,67 @@ end
 
 
 local function myexit()
-	i=0
-	repeat
-		i=i+1
-		s=string.format("frames%s.json",i)
-	until( not file_exists(s) )
-	file = io.open(s, "a")
-	local timet=0
-	local timeb=0
-	local timem=0
-	local temp1=0
-	local temp2=0
-	local temp3=0
-	io.output(file)
-	io.write("{\n")
-	timet,timeb,timem=FormatTop(Overworld)
-	temp1,temp2,temp3=FormatTop(Underground)
-	timet=timet+temp1
-	timeb=timeb+temp2
-	timem=timem+temp3
-	temp1,temp2,temp3=FormatTop(Dungeons)
-	timet=timet+temp1
-	timeb=timeb+temp2
-	timem=timem+temp3
-	temp1,temp2,temp3=FormatTop(MoonArea)
-	timet=timet+temp1
-	timeb=timeb+temp2
-	timem=timem+temp3
-	io.write(string.format("\"Zeromus\": "))
-	temp1,temp2,temp3=FormatBottom(Zeromus)
-	timet=timet+temp1
-	timeb=timeb+temp2
-	timem=timem+temp3
-	io.write(string.format(",\n\"Misc\": "))
-	temp1,temp2,temp3=FormatBottom(Misc)
-	timet=timet+temp1
-	timeb=timeb+temp2
-	timem=timem+temp3
-	lagcount=emu.lagcount()-lagcount
-	io.write(string.format(",\n\"time\": {\n%s},\n",FormatTime(timet)))
-	io.write(string.format("\"menu\": {\n%s},\n",FormatTime(timem)))
-	io.write(string.format("\"battle\": {\n%s},\n",FormatTime(timeb)))
-	io.write(string.format("\"Steps\": %d,\n",Steps))
-	io.write(string.format("\"Fly\": %d,\n",TilesFlown))
-	io.write(string.format("\"Transitions\": %d,\n",Transitions))
-	io.write(string.format("\"Route\": \"%s\",\n", table.concat(AreaString, ",")))
-	io.write(string.format("\"RouteTime\": \"%s\",\n",table.concat(FramesString, ",")))
-	io.write(string.format("\"RouteDetailed\": \"%s\",\n",table.concat(DetailedString, ",")))
-	io.write(string.format("\"RouteDetailedTime\": \"%s\",\n",table.concat(FramesDetailed, ",")))
-	ShopTimes(Shops)
-	FormatKI()
-	FormatKILoc()
-	io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
-	io.close(file)
+	if(Exited) then
+		return
+	else
+		i=0
+		repeat
+			i=i+1
+			s=string.format("frames%s.json",i)
+		until( not file_exists(s) )
+		file = io.open(s, "a")
+		local timet=0
+		local timeb=0
+		local timem=0
+		local temp1=0
+		local temp2=0
+		local temp3=0
+		io.output(file)
+		io.write("{\n")
+		timet,timeb,timem=FormatTop(Overworld)
+		temp1,temp2,temp3=FormatTop(Underground)
+		timet=timet+temp1
+		timeb=timeb+temp2
+		timem=timem+temp3
+		temp1,temp2,temp3=FormatTop(Dungeons)
+		timet=timet+temp1
+		timeb=timeb+temp2
+		timem=timem+temp3
+		temp1,temp2,temp3=FormatTop(MoonArea)
+		timet=timet+temp1
+		timeb=timeb+temp2
+		timem=timem+temp3
+		io.write(string.format("\"Zeromus\": "))
+		temp1,temp2,temp3=FormatBottom(Zeromus)
+		timet=timet+temp1
+		timeb=timeb+temp2
+		timem=timem+temp3
+		io.write(string.format(",\n\"Misc\": "))
+		temp1,temp2,temp3=FormatBottom(Misc)
+		timet=timet+temp1
+		timeb=timeb+temp2
+		timem=timem+temp3
+		lagcount=emu.lagcount()-lagcount
+		io.write(string.format(",\n\"time\": {\n%s},\n",FormatTime(timet)))
+		io.write(string.format("\"menu\": {\n%s},\n",FormatTime(timem)))
+		io.write(string.format("\"battle\": {\n%s},\n",FormatTime(timeb)))
+		io.write(string.format("\"Steps\": %d,\n",Steps))
+		io.write(string.format("\"Fly\": %d,\n",TilesFlown))
+		io.write(string.format("\"Transitions\": %d,\n",Transitions))
+		io.write(string.format("\"Route\": \"%s\",\n", table.concat(AreaString, ",")))
+		io.write(string.format("\"RouteTime\": \"%s\",\n",table.concat(FramesString, ",")))
+		io.write(string.format("\"RouteDetailed\": \"%s\",\n",table.concat(DetailedString, ",")))
+		io.write(string.format("\"RouteDetailedTime\": \"%s\",\n",table.concat(FramesDetailed, ",")))
+		ShopTimes(Shops)
+		FormatKI()
+		FormatKILoc()
+		io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
+		io.close(file)
+		Exited=true
+	end
 end
 
 emu.registerbefore(myframe)
 emu.registerexit(myexit)
+
+memory.registerexec(0x03F591,myexit)
