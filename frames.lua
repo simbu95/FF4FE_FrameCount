@@ -1,5 +1,6 @@
 startTime=0
 lagcount=0
+treasures=0
 started=false
 Battle=false
 Menu=false;
@@ -171,6 +172,20 @@ function file_exists(name) --https://stackoverflow.com/questions/4990990/check-i
    if f~=nil then io.close(f) return true else return false end
 end
 
+local function countTreasure()
+	local tres=0
+	local mem=0
+	for i=0,63 do
+		mem=memory.readbyte(0x7E12A0+i)
+		for j=0,7 do
+			if(bit.band(mem,bit.lshift(1,j)) ~= 0) then
+				tres=tres+1
+			end
+		end
+	end
+	return tres
+end
+
 local function myframe()
 	local menu = memory.readbyte(0x7E0500)
 	if(started) then
@@ -236,6 +251,7 @@ local function myframe()
 		gui.text(70,6, "paused")
 		if not (menu == 170) then
 			started=true
+			treasures=countTreasure()
 			lagcount=emu.lagcount()
 			startTime=emu.framecount()
 			--gui.text(50,60, 2)
@@ -412,6 +428,7 @@ local function myexit()
 		io.write(string.format("\"RouteTime\": \"%s\",\n",table.concat(FramesString, ",")))
 		io.write(string.format("\"RouteDetailed\": \"%s\",\n",table.concat(DetailedString, ",")))
 		io.write(string.format("\"RouteDetailedTime\": \"%s\",\n",table.concat(FramesDetailed, ",")))
+		io.write(string.format("\"Treasures\": %d,\n",countTreasure()-treasures))
 		ShopTimes(Shops)
 		FormatKI()
 		FormatKILoc()
