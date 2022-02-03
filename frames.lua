@@ -259,6 +259,15 @@ local function myframe()
 	end
 end
 
+local function metaData()
+	local numBytes=memory.readbyte(0x3FF000)+memory.readbyte(0x3FF001)*256+memory.readbyte(0x3FF002)*256*256+memory.readbyte(0x3FF003)*256*256*256
+	local str = ""
+	for i=1,numBytes-2 do
+		str = str .. string.char(memory.readbyte(0x3FF004+i))
+	end
+	io.write(string.format("\"metadata\": {\n%s},\n",str))
+end
+
 local function FormatTime(t)
 	return string.format("\"minutes\":%d,\n\"seconds\":%d\n",t/3600,(t%3600)/60)
 end
@@ -432,6 +441,7 @@ local function myexit()
 		ShopTimes(Shops)
 		FormatKI()
 		FormatKILoc()
+		metaData()
 		io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
 		io.close(file)
 		Exited=true
