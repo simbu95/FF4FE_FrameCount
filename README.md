@@ -18,7 +18,7 @@ In the new window, click browse, and then select the frames.lua script. The scri
 
 Once running, the script will draw the word "Paused" near the top of the screen. Once you exit the select save file menu, the script will start counting the time you spend in each area. 
 
-When you finish the run, press the stop button, and the script will automatically write to a new file named frames###.json (picks the first number not already used and uses that) in the same directory as the frames.lua script. Alternatively you can just close snes9x and the file will automatically be written to as well. 
+When you defeat Zeromus, the script will automatically write to a new file named frames###.json (picks the first number not already used and uses that) in the same directory as the frames.lua script. You can also, press the stop button of the lua window to end the recording. Alternatively you can just close snes9x and the file will automatically be written to as well. 
 
 # Metadata Extraction
 
@@ -29,5 +29,7 @@ To eventually allow a database of seed info to be used, I have added in a python
 abigtoe is working on a website to take a json file as input, and display everything in a tidy manner, along with other interesting breakdowns. You can try it at https://chrono.abigtoe.org/
 
 # Known Issues
+
 When recieving the hook from a trapped chest, it won't correctly track the hook being recieved in the KI details.
+
 Unfortunately there seems to be a disconnect between clearing the trapped chest, and the hook being marked as obtained, and it seems to only effect the hook and trapped chests (probably because its not actually an item that appears on the treasure screen). With how rare and singular it is, there is probably no reason to try to fix it. 
