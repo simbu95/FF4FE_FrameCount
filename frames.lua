@@ -476,10 +476,14 @@ local function myexit()
 		io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
 		io.close(file)
 		Exited=true
+		print("Congrats, your run has been recorded")
+		emu.registerbefore(nil)
+		emu.registerexit(nil)
+		memory.registerexec(0x03F591,1,nil)
 	end
 end
 
 emu.registerbefore(myframe)
 emu.registerexit(myexit)
 
-memory.registerexec(0x03F591,myexit)
+memory.registerexec(0x03F591,1,myexit)
