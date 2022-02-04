@@ -214,12 +214,10 @@ local function myframe()
 		end
 		--gui.text(50,60, areas[mapID+1])
 		--gui.text(50,70, idToArea[mapID])
-		gui.text(80,70, memory.readword(0x7E1800))
 		area_frames[mapID] = area_frames[mapID] + 1
 		if battle ~= 0x85 then
 			area_battles[mapID] = area_battles[mapID] + 1
 			local formID = memory.readword(0x7e1800)
-			gui.text(80,70, BossFormations[formID])
 			if(BossFormations[formID] ~= nil) then
 				BossBattles[BossFormations[formID]]=BossBattles[BossFormations[formID]]+1
 			elseif memory.readbyte(0x7e1628) ~= 0 then
