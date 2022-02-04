@@ -116,29 +116,34 @@ for i=-4, 80000 do
 	area_menus[i]=0
 end
 
+function compare(x, y)
+    return x[1] < y[1]
+end
+
 local function printChars()
 	local str={}
-	
+	local stri=""
 	if(bit.band(memory.readbyte(0x7E1000),0x1f) ~= 0) then
-		table.insert(str,bit.band(memory.readbyte(0x7E1001),0x0f))
+		table.insert(str,{bit.band(memory.readbyte(0x7E1001),0x0f), memory.readbyte(0x7E1002)})
 	end
 	if(bit.band(memory.readbyte(0x7E1040),0x1f) ~= 0) then
-		table.insert(str,bit.band(memory.readbyte(0x7E1041),0x0f))
+		table.insert(str,{bit.band(memory.readbyte(0x7E1041),0x0f), memory.readbyte(0x7E1042)})
 	end
 	if(bit.band(memory.readbyte(0x7E1080),0x1f) ~= 0) then
-		table.insert(str,bit.band(memory.readbyte(0x7E1081),0x0f))
+		table.insert(str,{bit.band(memory.readbyte(0x7E1081),0x0f), memory.readbyte(0x7E1082)})
 	end
 	if(bit.band(memory.readbyte(0x7E10C0),0x1f) ~= 0) then
-		table.insert(str,bit.band(memory.readbyte(0x7E10C1),0x0f))
+		table.insert(str,{bit.band(memory.readbyte(0x7E10C1),0x0f), memory.readbyte(0x7E10C2)})
 	end
 	if(bit.band(memory.readbyte(0x7E1100),0x1f) ~= 0) then
-		table.insert(str,bit.band(memory.readbyte(0x7E1101),0x0f))
+		table.insert(str,{bit.band(memory.readbyte(0x7E1101),0x0f), memory.readbyte(0x7E1102)})
 	end
-	table.sort(str)
-	for i,v in ipairs(str) do
-		str[i]=iToC[v]
+	table.sort(str,compare)
+	stri=iToC[str[1][1]] .. ":" .. str[1][2]
+	for i = 2,#str do
+		stri=stri .. "," .. iToC[str[i][1]] .. ":" .. str[i][2]
 	end
-	return table.concat(str,",")
+	return stri
 end
 
 local function checkKIs()
