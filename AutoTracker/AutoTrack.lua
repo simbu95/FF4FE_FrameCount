@@ -157,24 +157,24 @@ end
 
 local function checkKIs()
 	local nbs=0;
-	for i=0, 7 do
-		Bs=memory.readbyte(0x7E1514+i)
+	for i=0, 1 do
+		Bs=memory.readdword(0x7E1514 + 4*i)
 		nbs=bit.bnot(LocationBinary[i])
 		nbs=bit.band(nbs,Bs)
-		for j=0,7 do
+		for j=0,31 do
 			if(bit.band(nbs,bit.lshift(1,j)) ~= 0) then
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
-				LocTimes[8*i+j]=emu.framecount()-startTime
-				LocParty[8*i+j]=printChars()
-				Bs=memory.readdword(0x7E1500)
+				LocTimes[32*i+j]=emu.framecount()-startTime
+				LocParty[32*i+j]=printChars()
+				Bs=bit.band(memory.readdword(0x7E1500),0x1FFFF)
 				tcp:send(string.format("{\"KI\": %d}",Bs))
 				nbs=bit.bnot(LocationBinaryinary[1])
 				nbs=bit.band(nbs,Bs)
 				for l=0,17 do
 					if(bit.band(nbs,bit.lshift(1,l)) ~= 0) then
 						LocationBinaryinary[1]=bit.bor(LocationBinaryinary[1],bit.lshift(1,l))
-						LocToKisMap[8*i+j]=l
-						KIsToLocMap[l]=8*i+j
+						LocToKisMap[32*i+j]=l
+						KIsToLocMap[l]=32*i+j
 						table.insert(DetailedString, string.format("KI:%d",l))
 						table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
 					end
