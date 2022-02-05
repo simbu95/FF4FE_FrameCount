@@ -1,6 +1,6 @@
 # How to setup
 
-Copy this entire folder into your snes9x 1.6-rr (32 bit not 64) bit folder. A download for that version of snes9x is avaliable at https://github.com/gocha/snes9x-rr/releases
+Copy this entire folder into your snes9x 1.6-rr (32 bit not 64 bit) folder. A download for that version of snes9x is avaliable at https://github.com/gocha/snes9x-rr/releases
 
 Other versions of snes9x-rr could work, but you might need to find a different version of socket.dll (I could only find a 32 bit version).
 
