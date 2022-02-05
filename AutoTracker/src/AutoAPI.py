@@ -7,7 +7,6 @@ import datetime
 import json
 import threading
 import socketserver
-import ipdb
 
 #  Third party imports
 import cherrypy
@@ -31,6 +30,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
                 globe.Flags = x['metadata']['flags']
             elif 'KI' in x:
                 globe.parseKI(x['KI'])
+                globe.parseLoc(x['Loc1'],x['Loc2'])
 
 
 class ThreadedTCPServer(socketserver.ThreadingMixIn, socketserver.TCPServer):
@@ -60,5 +60,6 @@ class AutoAPI(object):
         global globe
         x={}
         x['KI'] = globe.KI
+        x['Loc'] = globe.Locs
         return x
 

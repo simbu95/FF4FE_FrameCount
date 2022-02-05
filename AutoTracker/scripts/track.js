@@ -2894,7 +2894,14 @@ function UnhighlightClear(partySlot) {
 }
 
 var querySuccess = function (data1) {
-  keyitems = data1['KI'];
+  for(x in data1['KI']){
+    keyitems[x] = data1['KI'][x];
+  }
+  for(x in data1['Loc']){
+	  if(data1['Loc'][x] == 1 ){
+        keyitemlocations[x] = 2;
+	  }
+  }
   ApplyChecks();
 };
 
