@@ -20,6 +20,7 @@ class MyTCPHandler(socketserver.BaseRequestHandler):
         # self.request is the TCP socket connected to the client
         while True:
             self.data = self.request.recv(1024).strip()
+            print(self.data)
             x=json.loads(self.data.decode('utf-8'))
             print("{} wrote:".format(self.client_address[0]))
             print(json.dumps(x, sort_keys=True, indent=4))

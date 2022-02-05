@@ -8,8 +8,10 @@ class AutoGlobal(object):
         self.Locs=[]
         
     def parseKI(self,x):
-        out = [1 if x & (1 << (18-n)) else 0 for n in range(18)]
-        out.reverse()
-        order = [8,10,13,0,7,5,2,3,6,1,4,11,12,9,14,15,16,17]
+        out = [x & 1 << b and 1 for b in range(17)]
+        print(out)
+        order = [8,10,13,0,7,5,2,3,6,1,4,11,12,9,14,15,16]
+        order = [3,9,6,7,10,5,8,13,0,13,1,11,12,2,14,15,16]
         self.KI = [out[i] for i in order]
+        print(self.KI)
         return
