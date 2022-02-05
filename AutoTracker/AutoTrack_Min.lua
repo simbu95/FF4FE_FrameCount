@@ -12,7 +12,7 @@ local function checkKIs()
 end
 
 local function myframe()
-	if(emu.framecount() % 300 == 0)
+	if(emu.framecount() % 300 == 0) then
 		checkKIs()
 	end
 end
