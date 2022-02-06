@@ -1,35 +1,25 @@
-# FF4FE_FrameCount
+# FF4FE AutoTracker
 
-Lua script for counting time spent in each area during a playthrough of FF4. Intended use is for timing runs of FF4FE to see which areas a runner used most of their time. 
+This repo contained all the files needed for setting up an Autotracker for FF4FE. 
 
 # Getting Started
 
-You will need a version of snes9x that supports lua scripts. The one I personally use is snes9x 1.6 from https://github.com/gocha/snes9x-rr/releases
+You will need a version of snes9x that supports lua scripts. You will also need a dll for the socket libs. This repo contains snes9x 1.6 - rr (32 bit) from https://github.com/gocha/snes9x-rr/releases as well as a 32bit socket dll. 
 
-You can also get a version from http://tasvideos.org/EmulatorResources/Snes9x.html or find one from another repo, but I personally like the look and feel of snes9x 1.6 the most. 
+I do recommend as soon as you start the emulator to go to Input, customize hotkeys, and go thru all 4 pages of hotkeys and disable any that you don't want to use, otherwise you might accidently disable graphics layers or turn on features you don't want. You will also need to setup your controller (or if you already had a different version of snes9x, you can copy the the conf file over to quickly get your old setup.)
 
-I do recommend as soon as you start the emulator to go to Input, customize hotkeys, and go thru all 4 pages of hotkeys and disable any that you don't want to use, otherwise you might accidently disable graphics layers or turn on features you don't want.
+# Start the WebServer
+
+To hook the web-interface to the lua script, there is a python executable. If you would like to run the source code, it can be found on the other branch, but for this version, just double click AutoTrack.exe from the AutoTrack folder, and the webserver will automatically start.
 
 # Running the Lua script. 
 
 To start the lua script, first load a rom of FF4, then navigate to File, Lua Scripting, New Lua Script Window. 
 
-In the new window, click browse, and then select the frames.lua script. The script will probably automatically start running, if it doesn't, press the start button.
+In the new window, click browse, and then select the script you want to use. The script will probably automatically start running, if it doesn't, press the start button.
 
-Once running, the script will draw the word "Paused" near the top of the screen. Once you exit the select save file menu, the script will start counting the time you spend in each area. 
+# Use the Tracker
 
-When you defeat Zeromus, the script will automatically write to a new file named frames###.json (picks the first number not already used and uses that) in the same directory as the frames.lua script. You can also, press the stop button of the lua window to end the recording. Alternatively you can just close snes9x and the file will automatically be written to as well. 
+After the lua script has been started, type "localhost" into your browser, and you should have the tracker automatically populate the flags, and as you run thru the seed it will automatically track any KIs you have obtained and locations you have completed. 
 
-# Metadata Extraction
-
-To eventually allow a database of seed info to be used, I have added in a python script for extracting the metadata out of a given rom. You can run the script yourself, drag the rom file onto the provided .bat file (the rom file must be in the same directory as the .py file), or drag and drop the rom file onto the provided metadata.exe file. All of these will create a out.txt file in the same directory as your rom file, with all the metadata from the seed. 
-
-# Features Comming Soon
-
-abigtoe is working on a website to take a json file as input, and display everything in a tidy manner, along with other interesting breakdowns. You can try it at https://chrono.abigtoe.org/
-
-# Known Issues
-
-When recieving the hook from a trapped chest, it won't correctly track the hook being recieved in the KI details.
-
-Unfortunately there seems to be a disconnect between clearing the trapped chest, and the hook being marked as obtained, and it seems to only effect the hook and trapped chests (probably because its not actually an item that appears on the treasure screen). With how rare and singular it is, there is probably no reason to try to fix it. 
+To start a different seed, you can just load up the new seed, start the lua script, and refresh your browser to update the flags again. 
