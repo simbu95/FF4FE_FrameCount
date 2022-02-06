@@ -123,6 +123,7 @@ local function checkKIs()
 				LocTimes[32*i+j]=emu.framecount()-startTime
 				LocParty[32*i+j]=printChars()
 				Bs=bit.band(memory.readdword(0x7E1500),0x1FFFF)
+				tcp:send(string.format("{\"KI\": %d,\"Loc1\": %d,\"Loc2\": %d}",KI,words[0],words[1]))
 				nbs=bit.bnot(KIBinary)
 				nbs=bit.band(nbs,Bs)
 				for l=0,17 do
@@ -427,4 +428,4 @@ emu.registerexit(myexit)
 
 tcp:send("{" .. metaData() .. "}")
 
-memory.registerexec(0x03F591,myexit)
+memory.registerexec(0x03F591,1,myexit)
