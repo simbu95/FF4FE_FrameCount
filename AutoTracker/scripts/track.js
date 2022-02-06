@@ -157,7 +157,7 @@ var disableobjectivetracker = '0';
 var partyswap = 0;
 var ignoreswap = false;
 
-var flags = Flags;
+var flags = Flags.toUpperCase();
 var useBeta = 'false'
 var flagsets = flags.split(' ');
 var flagsReadable = '';
@@ -230,7 +230,7 @@ function SetModes() {
         document.getElementById('objective' + i).style.display = "flex";
     }
 
-    flags = Flags;
+    flags = Flags.toUpperCase();
 
     flagsets = flags.split(' ');
     excludedCharacters = '';
@@ -249,7 +249,7 @@ function SetModes() {
             //Objectives
             if (flagsets[fs].startsWith('O')) {
                 flagsReadable += '<div ' + flagsHeaderStyle + '>' + 'Objectives' + '</div>';
-                var flagstring = flagsets[fs].substr(1).toUpperCase();
+                var flagstring = flagsets[fs].substr(1);
                 var keys = flagstring.split('/');
                 for (var k in keys) {
                     flagsReadable += keys[k] + (k < keys.length - 1 ? ', ' : '');
@@ -730,7 +730,7 @@ function SetModes() {
                                 if (keys[k].substring(6) === 'ANY') {
                                     anystart = true;
                                 } else {
-                                    cstartstring = keys[k].substring(6).toUpperCase();
+                                    cstartstring = keys[k].substring(6);
                                 }
                                 //modeflags.cstart = keys[k].substring(6);
                             }
