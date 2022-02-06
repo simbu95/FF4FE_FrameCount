@@ -1,20 +1,8 @@
-startTime=0
-lagcount=0
-treasures=0
-started=false
-Battle=false
-Menu=false;
-Exited=false;
+startTime,lagcount,treasures=0,0,0
+started,Battle,Menu=false,false,false
 
-area_battles = {}
-area_frames = {}
-area_menus = {}
-LocTimes={}
-LocParty={}
-LocationBinary={}
-LocationBinaryinary={}
-KIsToLocMap={}
-LocToKisMap={}
+area_battles,area_frames,area_menus,LocTimes,LocParty,LocationBinary,KIsToLocMap,LocToKisMap,BossBattles,BossParty = {},{},{},{},{},{},{},{},{},{}
+KIBinary=0
 LocNames={"Starting item","Antlion nest","Defending Fabul","Mt. Ordeals","Baron Inn","Baron Castle","Edward in Toroia","Cave Magnes","Tower of Zot","Lower Bab-il boss","Super Cannon","Dwarf Castle/Luca","Sealed Cave","Feymarch chest","Rat Tail trade","Yang's wife (for finding Yang)","Yang's wife (Pan trade)","Feymarch queen","Feymarch king","Odin throne","From the Sylphs","Cave Bahamut","Pale Dim/Murasame altar","Wyvern/Crystal Sword altar","Plague/White spear altar","D.Lunar/Ribbon chest 1","D.Lunar/Ribbon chest 2","Ogopogo/Masamune altar","Tower of Zot trapped chest","Eblan trapped chest 1","Eblan trapped chest 2","Eblan trapped chest 3","Lower Bab-il trapped chest 1","Lower Bab-il trapped chest 2","Lower Bab-il trapped chest 3","Lower Bab-il trapped chest 4","Cave Eblan trapped chest","Upper Bab-il trapped chest","Cave of Summons trapped chest","Sylph Cave trapped chest 1","Sylph Cave trapped chest 2","Sylph Cave trapped chest 3","Sylph Cave trapped chest 4","Sylph Cave trapped chest 5","Sylph Cave trapped chest 6","Sylph Cave trapped chest 7","Giant of Bab-il trapped chest","Lunar Path trapped chest","Lunar Core trapped chest ","Lunar Core trapped chest 2","Lunar Core trapped chest 3","Lunar Core trapped chest 4","Lunar Core trapped chest 5","Lunar Core trapped chest 6","Lunar Core trapped chest 7","Lunar Core trapped chest 8","Lunar Core trapped chest 9","Rydia's Mom","Fallen Golbez (vanilla Crystal location)","E1","E2","Objective completion","E3","E4"}
 LocNames[0]=""
 KIsNames={"Package","Sandruby","Legend Sword","Baron Key","Twinharp","Earth Crystal","Magma Key","Tower Key","Hook","Luca Key","Darkness Crystal","Rat Tail","Adamant","Pan","Spoon","Pink Tail","Crystal"}
@@ -26,22 +14,11 @@ iToC={"Kain","Rydia","Tellah","Edward","Rosa","Yang","Palom","Porom","Cecil","Ci
 iToC[0]="Cecil"
 BossFormations={[224]=1,[432]=2,[430]=3,[228]=4,[423]=5,[434]=6,[231]=7,[260]=8,[509]=9,[222]=10,[433]=11,[431]=12,[438]=14,[250]=15,[229]=16,[242]=17,[426]=18,[429]=19,[425]=20,[232]=21,[226]=22,[227]=23,[246]=24,[225]=25,[223]=26,[428]=27,[237]=28,[506]=29,[507]=30,[510]=31,[427]=32,[234]=33,[239]=34,[508]=35,[439]=36,[479]=37,[394]=38,[200]=39,[194]=40,[348]=41,[349]=41,[350]=41,[351]=41}
 FormationIDToBoss={"ANTLION",'ASURA','BAHAMUT','BAIGAN','CALBRENA','CPU','DARKELF','DARKIMP','DLUNAR','DMIST','ELEMENTS','EVILWALL','FABULGAUNTLET','GOLBEZ','GUARD','KAINAZZO','KARATE','KINGQUEEN','LEVIATAN','LUGAE','MAGUS','MILON','MILONZ','MIRRORCECIL','MOMBOMB','OCTOMAMM','ODIN','OFFICER','OGOPOGO','PALEDIM','PLAGUE','RUBICANT','VALVALIS','WATERHAG','WYVERN','ZEROMUS','Egg','Ryus','Dmachine','MacGiant','TrapDoors','Misc'}
-BossBattles={}
-currentArea=2
-currentID=0
-Transitions=0
-currentX=0
-currentY=0
-Steps=0
-TilesFlown=0
-AreaString = {"2"}
-DetailedString = {"0"}
-FramesString = {"0"}
-FramesDetailed = {"0"}
-areas[-3]="DummyValue"
-areas[-2]="OverworldMap"
-areas[-1]="UndergroundMap"
-areas[0]="MoonSurface"
+
+currentArea,currentID,Transitions,KIBinary,currentCoords,Steps,TilesFlown = 2,0,0,0,0,0,0
+AreaString,DetailedString,FramesString,FramesDetailed = {"2"},{"0"},{"0"},{"0"}
+
+areas[-3],areas[-2],areas[-1],areas[-0]="DummyValue","OverworldMap","UndergroundMap","MoonSurface"
 
 Baron={"Baron Town Areas",0,11,12,13,14,68,151,236}
 BaronCastle={"Baron Castle Areas",36,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,102,103,138,213}
@@ -62,7 +39,6 @@ Tomra={"Tomra Areas",257,260,261,262,306}
 Dwarf={"Dwarf Castle Areas",263,264,265,266,267,269,270,271,272,273,274,275,281,282,283,288}
 Feymarch={"Feymarch Areas",310,311,312,314,315,316,317,318,319,320,321,322,323}
 
-
 MistCave={"Mist Cave",108}
 WateryPass={"Watery Pass Areas",84,106,111,112,113,114,115,116,117,118,131,150}
 Antlion={"Antlion Areas",119,120,121,122,123}
@@ -81,10 +57,6 @@ Giant={"Giant Areas",181,182,183,185,186,188,189,190,191}
 Moon={"Moon Areas",303,346,347,348,352,353,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,371,372,373,374,375,376,377,378,379,380}
 Zeromus={"Zeromus",370}
 
-
-
-
-
 Misc={"Misc",27,34,35,41,104,105,107,109,110,124,125,130,155,163,164,165,173,174,175,176,177,178,179,180,184,187,192,193,194,195,196,197,208,214,215,216,217,218,219,220,221,222,223,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,268,284,297,298,299,300,302,304,305,308,309,313,349,350,351,354,381,382,383}
 
 Overworld={"Overworld",-3,Baron,BaronCastle,Mist,Kaipo,Mysidia,Mythril,Troia,TroiaCastle,Agart,Damcyan,Fabul,Eblan,Chocobo}
@@ -93,27 +65,19 @@ MoonArea={"Moon",-1,Moon}
 Dungeons={"Dungeons",-4,MistCave,WateryPass,Antlion,Hobbs,Ordeals,CaveMagnes,Zot,HookStuff,Babil,Sylph,SealedCave,Giant}
 
 Shops={"Shops",7,8,9,10,12,16,32,69,70,75,76,203,204,225,226,227,228,229,230,231,233,234,235,236,258,261,270,273,306,321,322,323,357}
-for i=0, 2 do
-	LocationBinaryinary[i]=0
-end
 
-for i=0, 7 do
+for i=0, 1 do
 	LocationBinary[i]=0
 end
 for i=0, 16 do
 	KIsToLocMap[i]=-1
 end
 for i=-1, 63 do
-	BossBattles[i]=0
-	LocTimes[i]=0
-	LocParty[i]=""
-	LocToKisMap[i]=-1
+	BossBattles[i],LocTimes[i],LocToKisMap[i],BossParty[i],LocParty[i]=0,0,-1,"",""
 end
 
 for i=-4, 80000 do
-	area_battles[i]=0
-	area_frames[i]=0
-	area_menus[i]=0
+	area_battles[i],area_frames[i],area_menus[i]=0,0,0
 end
 
 function compare(x, y)
@@ -123,20 +87,11 @@ end
 local function printChars()
 	local str={}
 	local stri=""
-	if(bit.band(memory.readbyte(0x7E1000),0x1f) ~= 0) then
-		table.insert(str,{bit.band(memory.readbyte(0x7E1001),0x0f), memory.readbyte(0x7E1002)})
-	end
-	if(bit.band(memory.readbyte(0x7E1040),0x1f) ~= 0) then
-		table.insert(str,{bit.band(memory.readbyte(0x7E1041),0x0f), memory.readbyte(0x7E1042)})
-	end
-	if(bit.band(memory.readbyte(0x7E1080),0x1f) ~= 0) then
-		table.insert(str,{bit.band(memory.readbyte(0x7E1081),0x0f), memory.readbyte(0x7E1082)})
-	end
-	if(bit.band(memory.readbyte(0x7E10C0),0x1f) ~= 0) then
-		table.insert(str,{bit.band(memory.readbyte(0x7E10C1),0x0f), memory.readbyte(0x7E10C2)})
-	end
-	if(bit.band(memory.readbyte(0x7E1100),0x1f) ~= 0) then
-		table.insert(str,{bit.band(memory.readbyte(0x7E1101),0x0f), memory.readbyte(0x7E1102)})
+	for i=0,4 do 
+		local temp=memory.readdword(0x7E1000+0x40*i)
+		if(bit.band(temp,0x1f) ~= 0) then
+			table.insert(str,{bit.band(bit.rshift(temp,8),0x0f), bit.band(bit.rshift(temp,16),0xff)})
+		end
 	end
 	table.sort(str,compare)
 	stri=iToC[str[1][1]] .. ":" .. str[1][2]
@@ -148,27 +103,29 @@ end
 
 local function checkKIs()
 	local nbs=0;
-	for i=0, 7 do
-		Bs=memory.readbyte(0x7E1514+i)
+	local words= {}
+	for i=0, 1 do
+		words[i]=memory.readdword(0x7E1514 + 4*i)
+	end
+	for i=0, 1 do
+		Bs=words[i]
 		nbs=bit.bnot(LocationBinary[i])
 		nbs=bit.band(nbs,Bs)
-		for j=0,7 do
+		for j=0,31 do
 			if(bit.band(nbs,bit.lshift(1,j)) ~= 0) then
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
-				LocTimes[8*i+j]=emu.framecount()-startTime
-				LocParty[8*i+j]=printChars()
-				for k=0,2 do
-					Bs=memory.readbyte(0x7E1500+k)
-					nbs=bit.bnot(LocationBinaryinary[k])
-					nbs=bit.band(nbs,Bs)
-					for l=0,7 do
-						if(bit.band(nbs,bit.lshift(1,l)) ~= 0) then
-							LocationBinaryinary[k]=bit.bor(LocationBinaryinary[k],bit.lshift(1,l))
-							LocToKisMap[8*i+j]=8*k+l
-							KIsToLocMap[8*k+l]=8*i+j
-							table.insert(DetailedString, string.format("KI:%d",8*k+l))
-							table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
-						end
+				LocTimes[32*i+j]=emu.framecount()-startTime
+				LocParty[32*i+j]=printChars()
+				Bs=bit.band(memory.readdword(0x7E1500),0x1FFFF)
+				nbs=bit.bnot(KIBinary)
+				nbs=bit.band(nbs,Bs)
+				for l=0,17 do
+					if(bit.band(nbs,bit.lshift(1,l)) ~= 0) then
+						KIBinary=bit.bor(KIBinary,bit.lshift(1,l))
+						LocToKisMap[32*i+j]=l
+						KIsToLocMap[l]=32*i+j
+						table.insert(DetailedString, string.format("KI:%d",l))
+						table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
 					end
 				end
 			end
@@ -182,11 +139,10 @@ function file_exists(name) --https://stackoverflow.com/questions/4990990/check-i
 end
 
 local function countTreasure()
-	local tres=0
-	local mem=0
-	for i=0,63 do
-		mem=memory.readbyte(0x7E12A0+i)
-		for j=0,7 do
+	local tres,mem=0,0
+	for i=0,15 do
+		mem=memory.readdword(0x7E12A0+4*i)
+		for j=0,31 do
 			if(bit.band(mem,bit.lshift(1,j)) ~= 0) then
 				tres=tres+1
 			end
@@ -195,18 +151,21 @@ local function countTreasure()
 	return tres
 end
 
-	
+
+local function FormatTime(t)
+	return string.format("\"minutes\":%d,\n\"seconds\":%d\n",t/3600,(t%3600)/60)
+end
 	
 local function myframe()
 	local menu = memory.readbyte(0x7E0500)
 	if(started) then
-		--gui.text(60,60, "Running")
-		local area = memory.readbyte(0x7E1700)
-		local mapID = (memory.readbyte(0x7E1701) * 256) + memory.readbyte(0x7E1702)
+		local temp = memory.readdword(0x7E1700)
+		local area = bit.band(temp,0xFF)
+		local mapID = bit.band(temp,0xFF00) + bit.rshift(bit.band(temp,0xFF0000),16)
 		local battle = memory.readbyte(0x7E0201)
-		local x = memory.readbyte(0x7E1706)
-		local y = memory.readbyte(0x7E1707)
-		local f = memory.readbyte(0x7E1704)
+		temp = memory.readdword(0x7E1704)
+		local coords = bit.band(temp,0xFFFF0000)
+		local f = bit.band(temp,0xFF)
 		
 		if area == 0 then
 		  mapID = -3
@@ -217,8 +176,6 @@ local function myframe()
 		if area == 2 then
 			mapID = -1
 		end
-		--gui.text(50,60, areas[mapID+1])
-		--gui.text(50,70, idToArea[mapID])
 		area_frames[mapID] = area_frames[mapID] + 1
 		if battle ~= 0x85 then
 			area_battles[mapID] = area_battles[mapID] + 1
@@ -232,6 +189,13 @@ local function myframe()
 			end
 			if not Battle then
 				Battle=true
+				if(BossFormations[formID] ~= nil) then
+					BossParty[BossFormations[formID]]=printChars()
+				elseif memory.readbyte(0x7e1628) ~= 0 then
+					BossParty[13]=printChars()
+				else
+					BossParty[42]=printChars()
+				end
 				table.insert(DetailedString, string.format("B"))
 				table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
 			end
@@ -242,11 +206,10 @@ local function myframe()
 				table.insert(DetailedString, string.format("M"))
 				table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
 			end
-		elseif (x~=currentX) or (y~=currentY) then
+		elseif (coords~=currentCoords)then
 			Battle=false
 			Menu=false
-			currentX=x
-			currentY=y
+			currentCoords=coords
 			if f>0 then
 				TilesFlown=TilesFlown+1
 			else
@@ -273,23 +236,19 @@ local function myframe()
 			treasures=countTreasure()
 			lagcount=emu.lagcount()
 			startTime=emu.framecount()
-			--gui.text(50,60, 2)
 		end
 	end
 end
 
 local function metaData()
-	local numBytes=memory.readbyte(0x3FF000)+memory.readbyte(0x3FF001)*256+memory.readbyte(0x3FF002)*256*256+memory.readbyte(0x3FF003)*256*256*256
+	local numBytes=memory.readdword(0x3FF000)
 	local str = ""
 	for i=1,numBytes-2 do
 		str = str .. string.char(memory.readbyte(0x3FF004+i))
 	end
-	io.write(string.format("\"metadata\": {\n%s},\n",str))
+	return string.format("\"metadata\": {\n%s}\n",str)
 end
 
-local function FormatTime(t)
-	return string.format("\"minutes\":%d,\n\"seconds\":%d\n",t/3600,(t%3600)/60)
-end
 
 local function FormatKILoc()
 	io.write(string.format("\"KI Locations\": [\n"))
@@ -329,17 +288,17 @@ local function printBoss()
 	io.write(string.format("\"Fights\": [\n"))
 	for i=1,41 do
 		io.write(string.format("{\n\"name\": \"%s\",\n",FormationIDToBoss[i]))
+		io.write(string.format("\"party\": \"%s\",\n",BossParty[i]))
 		io.write(string.format("\"time\": {\n%s}\n},",FormatTime(BossBattles[i])))
 		
 	end
 	io.write(string.format("{\n\"name\": \"%s\",\n",FormationIDToBoss[42]))
+	io.write(string.format("\"party\": \"%s\",\n",BossParty[42]))
 	io.write(string.format("\"time\": {\n%s}\n}\n],\n",FormatTime(BossBattles[42])))
 end
 
 local function ShopTimes(mylist)
-	local i=2
-	local timem=0
-	local index=0
+	local i,timem,index=2,0,0
 	while mylist[i] do
 		index=mylist[i]
 		timem=timem+area_menus[index]
@@ -350,11 +309,7 @@ local function ShopTimes(mylist)
 end
 
 local function FormatBottom(mylist)
-	local i=2
-	local timet=0
-	local timeb=0
-	local timem=0
-	local index=0
+	local i,timet,timeb,timem,index=2,0,0,0,0
 	io.write(string.format("{\n\"name\": \"%s\",\n",mylist[1]))
 	io.write(string.format("\"child-areas\": [\n"))
 	while mylist[i] do
@@ -380,14 +335,7 @@ local function FormatBottom(mylist)
 end
 
 local function FormatTop(mylist)
-	local i=3
-	local timet=0
-	local timeb=0
-	local timem=0
-	local temp1=0
-	local temp2=0
-	local temp3=0
-	local index=0
+	local i,timet,timeb,timem,temp1,temp2,temp3,index=3,0,0,0,0,0,0,0
 	io.write(string.format("\"%s\": {\n\"child-areas\":[\n{\n",mylist[1]))
 	io.write(string.format("\"name\": \"%s\",\n",areas[mylist[2]+1]))
 	io.write(string.format("\"time\": {\n%s},\n",FormatTime(area_frames[mylist[2]])))
@@ -425,37 +373,22 @@ local function myexit()
 			s=string.format("frames%s.json",i)
 		until( not file_exists(s) )
 		file = io.open(s, "a")
-		local timet=0
-		local timeb=0
-		local timem=0
-		local temp1=0
-		local temp2=0
-		local temp3=0
+		local timet,timeb,timem,temp1,temp2,temp3,index=0,0,0,0,0,0,0
 		io.output(file)
 		io.write("{\n")
 		timet,timeb,timem=FormatTop(Overworld)
 		temp1,temp2,temp3=FormatTop(Underground)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		temp1,temp2,temp3=FormatTop(Dungeons)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		temp1,temp2,temp3=FormatTop(MoonArea)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		io.write(string.format("\"Zeromus\": "))
 		temp1,temp2,temp3=FormatBottom(Zeromus)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		io.write(string.format(",\n\"Misc\": "))
 		temp1,temp2,temp3=FormatBottom(Misc)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		lagcount=emu.lagcount()-lagcount
 		io.write(string.format(",\n\"time\": {\n%s},\n",FormatTime(timet)))
 		io.write(string.format("\"menu\": {\n%s},\n",FormatTime(timem)))
@@ -471,9 +404,9 @@ local function myexit()
 		ShopTimes(Shops)
 		FormatKI()
 		FormatKILoc()
-		metaData()
 		printBoss()
-		io.write(string.format("\"lag frames\": {\n%s}\n}\n",FormatTime(lagcount)))
+		io.write(string.format("\"lag frames\": {\n%s},\n",FormatTime(lagcount)))
+		io.write(metaData().. "}")
 		io.close(file)
 		Exited=true
 		print("Congrats, your run has been recorded")
