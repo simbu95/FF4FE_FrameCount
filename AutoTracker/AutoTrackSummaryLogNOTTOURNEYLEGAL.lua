@@ -219,7 +219,7 @@ local function myframe()
 		if area == 2 then
 			mapID = -1
 		end
-		gui.text(50,60, FormatTime(emu.framecount()-startTime))
+		--gui.text(50,60, FormatTime(emu.framecount()-startTime))
 		area_frames[mapID] = area_frames[mapID] + 1
 		if battle ~= 0x85 then
 			area_battles[mapID] = area_battles[mapID] + 1
