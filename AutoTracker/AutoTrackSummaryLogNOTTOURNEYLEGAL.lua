@@ -1,27 +1,14 @@
-startTime=0
-lagcount=0
-treasures=0
-started=false
-Battle=false
-Menu=false;
-Exited=false;
+startTime,lagcount,treasures=0,0,0
+started,Battle,Menu=false,false,false
 
 local socket = require("socket.core")
-
 
 tcp=socket.tcp()
 tcp:connect('127.0.0.1',54321)
 tcp:setoption('keepalive',true)
 
-area_battles = {}
-area_frames = {}
-area_menus = {}
-LocTimes={}
-LocParty={}
-LocationBinary={}
-KIBinary=0
-KIsToLocMap={}
-LocToKisMap={}
+area_battles,area_frames,area_menus,LocTimes,LocParty,LocationBinary,KIsToLocMap,LocToKisMap,BossBattles,BossParty = {},{},{},{},{},{},{},{},{},{}
+
 LocNames={"Starting item","Antlion nest","Defending Fabul","Mt. Ordeals","Baron Inn","Baron Castle","Edward in Toroia","Cave Magnes","Tower of Zot","Lower Bab-il boss","Super Cannon","Dwarf Castle/Luca","Sealed Cave","Feymarch chest","Rat Tail trade","Yang's wife (for finding Yang)","Yang's wife (Pan trade)","Feymarch queen","Feymarch king","Odin throne","From the Sylphs","Cave Bahamut","Pale Dim/Murasame altar","Wyvern/Crystal Sword altar","Plague/White spear altar","D.Lunar/Ribbon chest 1","D.Lunar/Ribbon chest 2","Ogopogo/Masamune altar","Tower of Zot trapped chest","Eblan trapped chest 1","Eblan trapped chest 2","Eblan trapped chest 3","Lower Bab-il trapped chest 1","Lower Bab-il trapped chest 2","Lower Bab-il trapped chest 3","Lower Bab-il trapped chest 4","Cave Eblan trapped chest","Upper Bab-il trapped chest","Cave of Summons trapped chest","Sylph Cave trapped chest 1","Sylph Cave trapped chest 2","Sylph Cave trapped chest 3","Sylph Cave trapped chest 4","Sylph Cave trapped chest 5","Sylph Cave trapped chest 6","Sylph Cave trapped chest 7","Giant of Bab-il trapped chest","Lunar Path trapped chest","Lunar Core trapped chest ","Lunar Core trapped chest 2","Lunar Core trapped chest 3","Lunar Core trapped chest 4","Lunar Core trapped chest 5","Lunar Core trapped chest 6","Lunar Core trapped chest 7","Lunar Core trapped chest 8","Lunar Core trapped chest 9","Rydia's Mom","Fallen Golbez (vanilla Crystal location)","E1","E2","Objective completion","E3","E4"}
 LocNames[0]=""
 KIsNames={"Package","Sandruby","Legend Sword","Baron Key","Twinharp","Earth Crystal","Magma Key","Tower Key","Hook","Luca Key","Darkness Crystal","Rat Tail","Adamant","Pan","Spoon","Pink Tail","Crystal"}
@@ -33,23 +20,11 @@ iToC={"Kain","Rydia","Tellah","Edward","Rosa","Yang","Palom","Porom","Cecil","Ci
 iToC[0]="Cecil"
 BossFormations={[224]=1,[432]=2,[430]=3,[228]=4,[423]=5,[434]=6,[231]=7,[260]=8,[509]=9,[222]=10,[433]=11,[431]=12,[438]=14,[250]=15,[229]=16,[242]=17,[426]=18,[429]=19,[425]=20,[232]=21,[226]=22,[227]=23,[246]=24,[225]=25,[223]=26,[428]=27,[237]=28,[506]=29,[507]=30,[510]=31,[427]=32,[234]=33,[239]=34,[508]=35,[439]=36,[479]=37,[394]=38,[200]=39,[194]=40,[348]=41,[349]=41,[350]=41,[351]=41}
 FormationIDToBoss={"ANTLION",'ASURA','BAHAMUT','BAIGAN','CALBRENA','CPU','DARKELF','DARKIMP','DLUNAR','DMIST','ELEMENTS','EVILWALL','FABULGAUNTLET','GOLBEZ','GUARD','KAINAZZO','KARATE','KINGQUEEN','LEVIATAN','LUGAE','MAGUS','MILON','MILONZ','MIRRORCECIL','MOMBOMB','OCTOMAMM','ODIN','OFFICER','OGOPOGO','PALEDIM','PLAGUE','RUBICANT','VALVALIS','WATERHAG','WYVERN','ZEROMUS','Egg','Ryus','Dmachine','MacGiant','TrapDoors','Misc'}
-BossBattles={}
-BossParty={}
-currentArea=2
-currentID=0
-Transitions=0
-currentX=0
-currentY=0
-Steps=0
-TilesFlown=0
-AreaString = {"2"}
-DetailedString = {"0"}
-FramesString = {"0"}
-FramesDetailed = {"0"}
-areas[-3]="DummyValue"
-areas[-2]="OverworldMap"
-areas[-1]="UndergroundMap"
-areas[0]="MoonSurface"
+
+currentArea,currentID,Transitions,KIBinary,currentCoords,Steps,TilesFlown = 2,0,0,0,0,0,0
+AreaString,DetailedString,FramesString,FramesDetailed = {"2"},{"0"},{"0"},{"0"}
+
+areas[-3],areas[-2],areas[-1],areas[-0]="DummyValue","OverworldMap","UndergroundMap","MoonSurface"
 
 Baron={"Baron Town Areas",0,11,12,13,14,68,151,236}
 BaronCastle={"Baron Castle Areas",36,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,102,103,138,213}
@@ -70,7 +45,6 @@ Tomra={"Tomra Areas",257,260,261,262,306}
 Dwarf={"Dwarf Castle Areas",263,264,265,266,267,269,270,271,272,273,274,275,281,282,283,288}
 Feymarch={"Feymarch Areas",310,311,312,314,315,316,317,318,319,320,321,322,323}
 
-
 MistCave={"Mist Cave",108}
 WateryPass={"Watery Pass Areas",84,106,111,112,113,114,115,116,117,118,131,150}
 Antlion={"Antlion Areas",119,120,121,122,123}
@@ -89,10 +63,6 @@ Giant={"Giant Areas",181,182,183,185,186,188,189,190,191}
 Moon={"Moon Areas",303,346,347,348,352,353,355,356,357,358,359,360,361,362,363,364,365,366,367,368,369,371,372,373,374,375,376,377,378,379,380}
 Zeromus={"Zeromus",370}
 
-
-
-
-
 Misc={"Misc",27,34,35,41,104,105,107,109,110,124,125,130,155,163,164,165,173,174,175,176,177,178,179,180,184,187,192,193,194,195,196,197,208,214,215,216,217,218,219,220,221,222,223,237,238,239,240,241,242,243,244,245,246,247,248,249,250,251,252,253,254,255,268,284,297,298,299,300,302,304,305,308,309,313,349,350,351,354,381,382,383}
 
 Overworld={"Overworld",-3,Baron,BaronCastle,Mist,Kaipo,Mysidia,Mythril,Troia,TroiaCastle,Agart,Damcyan,Fabul,Eblan,Chocobo}
@@ -109,17 +79,11 @@ for i=0, 16 do
 	KIsToLocMap[i]=-1
 end
 for i=-1, 63 do
-	BossBattles[i]=0
-	BossParty[i]=""
-	LocTimes[i]=0
-	LocParty[i]=""
-	LocToKisMap[i]=-1
+	BossBattles[i],LocTimes[i],LocToKisMap[i],BossParty[i],LocParty[i]=0,0,-1,"",""
 end
 
 for i=-4, 80000 do
-	area_battles[i]=0
-	area_frames[i]=0
-	area_menus[i]=0
+	area_battles[i],area_frames[i],area_menus[i]=0,0,0
 end
 
 function compare(x, y)
@@ -181,11 +145,10 @@ function file_exists(name) --https://stackoverflow.com/questions/4990990/check-i
 end
 
 local function countTreasure()
-	local tres=0
-	local mem=0
-	for i=0,63 do
-		mem=memory.readbyte(0x7E12A0+i)
-		for j=0,7 do
+	local tres,mem=0,0
+	for i=0,15 do
+		mem=memory.readdword(0x7E12A0+4*i)
+		for j=0,31 do
 			if(bit.band(mem,bit.lshift(1,j)) ~= 0) then
 				tres=tres+1
 			end
@@ -219,7 +182,6 @@ local function myframe()
 		if area == 2 then
 			mapID = -1
 		end
-		--gui.text(50,60, FormatTime(emu.framecount()-startTime))
 		area_frames[mapID] = area_frames[mapID] + 1
 		if battle ~= 0x85 then
 			area_battles[mapID] = area_battles[mapID] + 1
@@ -342,9 +304,7 @@ local function printBoss()
 end
 
 local function ShopTimes(mylist)
-	local i=2
-	local timem=0
-	local index=0
+	local i,timem,index=2,0,0
 	while mylist[i] do
 		index=mylist[i]
 		timem=timem+area_menus[index]
@@ -355,11 +315,7 @@ local function ShopTimes(mylist)
 end
 
 local function FormatBottom(mylist)
-	local i=2
-	local timet=0
-	local timeb=0
-	local timem=0
-	local index=0
+	local i,timet,timeb,timem,index=2,0,0,0,0
 	io.write(string.format("{\n\"name\": \"%s\",\n",mylist[1]))
 	io.write(string.format("\"child-areas\": [\n"))
 	while mylist[i] do
@@ -385,14 +341,7 @@ local function FormatBottom(mylist)
 end
 
 local function FormatTop(mylist)
-	local i=3
-	local timet=0
-	local timeb=0
-	local timem=0
-	local temp1=0
-	local temp2=0
-	local temp3=0
-	local index=0
+	local i,timet,timeb,timem,temp1,temp2,temp3,index=3,0,0,0,0,0,0,0
 	io.write(string.format("\"%s\": {\n\"child-areas\":[\n{\n",mylist[1]))
 	io.write(string.format("\"name\": \"%s\",\n",areas[mylist[2]+1]))
 	io.write(string.format("\"time\": {\n%s},\n",FormatTime(area_frames[mylist[2]])))
@@ -430,37 +379,22 @@ local function myexit()
 			s=string.format("frames%s.json",i)
 		until( not file_exists(s) )
 		file = io.open(s, "a")
-		local timet=0
-		local timeb=0
-		local timem=0
-		local temp1=0
-		local temp2=0
-		local temp3=0
+		local timet,timeb,timem,temp1,temp2,temp3,index=0,0,0,0,0,0,0
 		io.output(file)
 		io.write("{\n")
 		timet,timeb,timem=FormatTop(Overworld)
 		temp1,temp2,temp3=FormatTop(Underground)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		temp1,temp2,temp3=FormatTop(Dungeons)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		temp1,temp2,temp3=FormatTop(MoonArea)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		io.write(string.format("\"Zeromus\": "))
 		temp1,temp2,temp3=FormatBottom(Zeromus)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		io.write(string.format(",\n\"Misc\": "))
 		temp1,temp2,temp3=FormatBottom(Misc)
-		timet=timet+temp1
-		timeb=timeb+temp2
-		timem=timem+temp3
+		timet,timeb,timem=timet+temp1,timeb+temp2,timem+temp3
 		lagcount=emu.lagcount()-lagcount
 		io.write(string.format(",\n\"time\": {\n%s},\n",FormatTime(timet)))
 		io.write(string.format("\"menu\": {\n%s},\n",FormatTime(timem)))
