@@ -189,10 +189,10 @@ local function myframe()
 			end
 			if not Battle then
 				Battle=true
-				if(BossFormations[formID] ~= nil) then
-					BossParty[BossFormations[formID]]=printChars()
-				elseif memory.readbyte(0x7e1628) ~= 0 then
+				if memory.readbyte(0x7e1628) ~= 0 then
 					BossParty[13]=printChars()
+				elseif(BossFormations[formID] ~= nil) then
+					BossParty[BossFormations[formID]]=printChars()
 				else
 					BossParty[42]=printChars()
 				end
