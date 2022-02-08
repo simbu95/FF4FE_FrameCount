@@ -116,7 +116,6 @@ local function checkKIs()
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
 				LocTimes[32*i+j]=emu.framecount()-startTime
 				LocParty[32*i+j]=printChars()
-				print(LocNames[32*i+j+1])
 				KiB=bit.band(memory.readdword(0x7E1500),0x1FFFF)
 				KINb=bit.bnot(KIBinary)
 				KINb=bit.band(KINb,KiB)
