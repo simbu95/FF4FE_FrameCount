@@ -227,6 +227,8 @@ local function myframe()
 				end
 			end
 		else
+			Battle=false
+			Menu=false
 			checkKIs()
 		end
 	else
