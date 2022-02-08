@@ -189,22 +189,22 @@ local function myframe()
 			local formID = memory.readword(0x7e1800)
 			if memory.readbyte(0x7e1628) ~= 0 then
 				BossBattles[13]=BossBattles[13]+1
-				BossTime[13]=emu.framecount()-startTime
 			elseif(BossFormations[formID] ~= nil) then
 				BossBattles[BossFormations[formID]]=BossBattles[BossFormations[formID]]+1
-				BossTime[formID]=emu.framecount()-startTime
 			else
 				BossBattles[42]=BossBattles[42]+1
-				BossTime[42]=emu.framecount()-startTime
 			end
 			if not Battle then
 				Battle=true
-				if(BossFormations[formID] ~= nil) then
-					BossParty[BossFormations[formID]]=printChars()
-				elseif memory.readbyte(0x7e1628) ~= 0 then
+				if memory.readbyte(0x7e1628) ~= 0 then
 					BossParty[13]=printChars()
+					BossTime[13]=emu.framecount()-startTime
+				elseif(BossFormations[formID] ~= nil) then
+					BossParty[BossFormations[formID]]=printChars()
+					BossTime[BossFormations[formID]]=emu.framecount()-startTime
 				else
 					BossParty[42]=printChars()
+					BossTime[42]=emu.framecount()-startTime
 				end
 				table.insert(DetailedString, string.format("B"))
 				table.insert(FramesDetailed, string.format("%d",(emu.framecount()-startTime)/60))
