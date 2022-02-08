@@ -122,7 +122,6 @@ local function checkKIs()
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
 				LocTimes[32*i+j]=emu.framecount()-startTime
 				LocParty[32*i+j]=printChars()
-				print(LocNames[32*i+j+1])
 				KiB=bit.band(memory.readdword(0x7E1500),0x1FFFF)
 				tcp:send(string.format("{\"KI\": %d,\"Loc1\": %d,\"Loc2\": %d}",KiB,words[0],words[1]))
 				KINb=bit.bnot(KIBinary)
