@@ -108,26 +108,27 @@ local function printChars()
 end
 
 local function checkKIs()
-	local nbs=0;
+	local LocB,LocNb,KiB,KINb=0;
 	local words= {}
 	for i=0, 1 do
 		words[i]=memory.readdword(0x7E1514 + 4*i)
 	end
 	for i=0, 1 do
-		Bs=words[i]
-		nbs=bit.bnot(LocationBinary[i])
-		nbs=bit.band(nbs,Bs)
+		LocB=words[i]
+		LocNb=bit.bnot(LocationBinary[i])
+		LocNb=bit.band(LocNb,LocB)
 		for j=0,31 do
-			if(bit.band(nbs,bit.lshift(1,j)) ~= 0) then
+			if(bit.band(LocNb,bit.lshift(1,j)) ~= 0) then
 				LocationBinary[i]=bit.bor(LocationBinary[i],bit.lshift(1,j))
 				LocTimes[32*i+j]=emu.framecount()-startTime
 				LocParty[32*i+j]=printChars()
-				Bs=bit.band(memory.readdword(0x7E1500),0x1FFFF)
-				tcp:send(string.format("{\"KI\": %d,\"Loc1\": %d,\"Loc2\": %d}",Bs,words[0],words[1]))
-				nbs=bit.bnot(KIBinary)
-				nbs=bit.band(nbs,Bs)
+				print(LocNames[32*i+j+1])
+				KiB=bit.band(memory.readdword(0x7E1500),0x1FFFF)
+				tcp:send(string.format("{\"KI\": %d,\"Loc1\": %d,\"Loc2\": %d}",KiB,words[0],words[1]))
+				KINb=bit.bnot(KIBinary)
+				KINb=bit.band(KINb,KiB)
 				for l=0,17 do
-					if(bit.band(nbs,bit.lshift(1,l)) ~= 0) then
+					if(bit.band(KINb,bit.lshift(1,l)) ~= 0) then
 						KIBinary=bit.bor(KIBinary,bit.lshift(1,l))
 						LocToKisMap[32*i+j]=l
 						KIsToLocMap[l]=32*i+j
