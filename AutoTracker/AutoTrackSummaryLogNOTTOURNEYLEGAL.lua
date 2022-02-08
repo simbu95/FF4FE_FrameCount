@@ -79,7 +79,7 @@ for i=0, 16 do
 	KIsToLocMap[i]=-1
 end
 for i=-1, 63 do
-	BossBattles[i],LocTimes[i],LocToKisMap[i],BossParty[i],LocParty[i]=0,0,-1,"",""
+	BossBattles[i],BossTime[i],LocTimes[i],LocToKisMap[i],BossParty[i],LocParty[i]=0,0,0,-1,"",""
 end
 
 for i=-4, 80000 do
@@ -189,10 +189,13 @@ local function myframe()
 			local formID = memory.readword(0x7e1800)
 			if memory.readbyte(0x7e1628) ~= 0 then
 				BossBattles[13]=BossBattles[13]+1
+				BossTime[13]=emu.framecount()-startTime
 			elseif(BossFormations[formID] ~= nil) then
 				BossBattles[BossFormations[formID]]=BossBattles[BossFormations[formID]]+1
+				BossTime[formID]=emu.framecount()-startTime
 			else
 				BossBattles[42]=BossBattles[42]+1
+				BossTime[42]=emu.framecount()-startTime
 			end
 			if not Battle then
 				Battle=true
@@ -298,11 +301,13 @@ local function printBoss()
 	for i=1,41 do
 		io.write(string.format("{\n\"name\": \"%s\",\n",FormationIDToBoss[i]))
 		io.write(string.format("\"party\": \"%s\",\n",BossParty[i]))
+		io.write(string.format("\"FightStart\": {\n%s},",FormatTime(BossBattles[i])))
 		io.write(string.format("\"time\": {\n%s}\n},",FormatTime(BossBattles[i])))
 		
 	end
 	io.write(string.format("{\n\"name\": \"%s\",\n",FormationIDToBoss[42]))
 	io.write(string.format("\"party\": \"%s\",\n",BossParty[42]))
+	io.write(string.format("\"FightStart\": {\n%s},",FormatTime(BossBattles[42])))
 	io.write(string.format("\"time\": {\n%s}\n}\n],\n",FormatTime(BossBattles[42])))
 end
 
