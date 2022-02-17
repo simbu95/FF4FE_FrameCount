@@ -1,3 +1,5 @@
+# OBSOLETE REPO, go to https://github.com/simbu95/fftracker instead
+
 # FF4FE_FrameCount
 
 Lua script for counting time spent in each area during a playthrough of FF4. Intended use is for timing runs of FF4FE to see which areas a runner used most of their time. 
